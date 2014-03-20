@@ -2,7 +2,6 @@
 <head>
 <script
 src="<c:url value="/resources/core/jquery.autocomplete.min.js" />"></script>
-<link href="<c:url value="/resources/core/main.css" />" rel="stylesheet">
 </head>
 <body>
 
