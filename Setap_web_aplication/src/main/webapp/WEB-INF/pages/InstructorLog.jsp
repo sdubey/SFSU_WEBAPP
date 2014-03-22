@@ -7,33 +7,53 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+	<table border="3.0">
+		<tr>
+			<td colspan="2">
+				<table border="4.0" >
+					<tr>
+						<td>
+							<h5 align="center">Instructor Class Log (Rev. 8/21/13)</h5>
+							<p>Use this log to record pertinent observations of student
+								team work during the development of the final class project.
+								This form can be used to log observations during instructor
+								meeting with teams (either regular scrum meetings during class
+								or extra meetings outside the classroom), or at any time when
+								instructor gets involved in resolving student team problems and
+								issues. Please keep hard copy of all logs and group them by
+								student teams. They will be used later for team evaluation,
+								grading and research on teaching team work in SE education.</p>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		
 		<tr>
 			<td>
-				<h5 align="center">Instructor Class Logs</h5>
-				<p>Lorem Ipsum is simply dummy text of the printing and
-					typesetting industry. Lorem Ipsum has been the industry's standard
-					dummy text ever since the 1500s , when an unknown printer took a
-					galley of type and scrambled it to make a type specimen book. It
-					has survived not only five centuries, but also the leap into
-					electronicv typesetting, remaining essentially</p>
+				<table border="4.0" width="100%">
+					<tr>
+						<td>
+						Instructor : <input type="text"/><br>
+						Team # : <input type="text"/><br>
+						Date of meeting <input type="text"/><br>
+						</td>
+						<td>
+							This is recording a (Check one):<br>
+							<input type="checkbox" name="vehicle" value="Bike">Regular scrum team meeting<br>
+							<input type="checkbox" name="vehicle" value="Car"> Extra team Meeting<br>  
+							<input type="checkbox" name="vehicle" value="Bike">Teamwork Issue<br>
+							<input type="checkbox" name="vehicle" value="Car">Other
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
-		<tr>
-			<td>Instructor : <input type="text">
-			</td>
-		</tr>
-		<tr>
-			<td>Team # : <input type="text">
-			</td>
-		</tr>
-		<tr>
-			<td>Date of meeting <input type="text">
-			</td>
-		</tr>
+		
 		<tr>
 			<td>
-				<table border="1.5" width="100%">
+				<table border="4.0" width="100%">
 					<tr>
 						<td>
 							<p>For Meeting only: Number of team members absent in the
@@ -45,9 +65,9 @@
 								<option value="3" selected>3</option>
 								<option value="4">4</option>
 						</select> <br> <br> <textarea rows="2" cols="100">
-		Type Reason here
-		</textarea></td>
-					</tr>
+								Type Reason here
+								</textarea></td>
+											</tr>
 				</table>
 			</td>
 		</tr>
@@ -55,62 +75,54 @@
 
 		<tr>
 			<td>
-				<table border="1.5" width="100%">
+				<table border="4.0" width="100%">
 					<tr>
-							
-						   <td >
-						    <p>Team's effectiveness : (1 poor, 5 excellent)</p>
-						    <input type="radio" name="sex" value="male">1 <input
+
+						<td>
+							<p>Team's effectiveness : (1 poor, 5 excellent)</p> <input
+							type="radio" name="sex" value="male">1 <input
 							type="radio" name="sex" value="female">2 <input
 							type="radio" name="sex" value="female">3 <input
 							type="radio" name="sex" value="female">4 <input
-							type="radio" name="sex" value="female">5</td>
-							
-							<td>
-							 <p>Team lead's effectiveness : (1 poor, 5 excellent)</p>
-						    <input type="radio" name="sex" value="male">1 <input
+							type="radio" name="sex" value="female">5
+						</td>
+
+						<td>
+							<p>Team lead's effectiveness : (1 poor, 5 excellent)</p> <input
+							type="radio" name="sex" value="male">1 <input
 							type="radio" name="sex" value="female">2 <input
 							type="radio" name="sex" value="female">3 <input
 							type="radio" name="sex" value="female">4 <input
-							type="radio" name="sex" value="female">5</td>
+							type="radio" name="sex" value="female">5
+						</td>
 					</tr>
 				</table>
 			</td>
 		</tr>
-
-
 		<tr>
 			<td>
-
-				<table border="1.5" width="100%">
+				<table border="4.0" width="100%">
 					<tr>
 						<td>
 							<table>
 								<tr>
 									<td>
-										<p>Checkpoints</p>
-									</td>
-								</tr>
-								<tr>
-									<td><a href="create_checkpoint"> Create a new Check point</a></td>
-								</tr>
-
-								<tr>
-									<td><a href="checkpoints"> Update / View existing check point</a></td>
+										Checkpoints<br>
+								          <a href="checkpoints"> Create/ Update / View
+											existing check point</a></td>
 								</tr>
 							</table>
 
 						</td>
 					</tr>
 				</table>
-
 			</td>
 		</tr>
 
 	</table>
-	<input type ="submit" value="Reset" align="right">
-	<input type ="submit" value="Submit" align="right">
-	
+	<input type="submit" value="Reset" align="right">
+	<input type="submit" value="Submit" align="right">
+
 
 </body>
 <%@ include file="footer.jsp"%>
