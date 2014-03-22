@@ -20,6 +20,13 @@
 		<servlet-name>ResponseServlet</servlet-name>
 		<servlet-class>sfsu.edu.controller.ResponseServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddData</display-name>
+		<servlet-name>AddData</servlet-name>
+		<servlet-class>sfsu.edu.controller.AddData</servlet-class>
+	</servlet>
  
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
@@ -28,6 +35,10 @@
 	<servlet-mapping>
 		<servlet-name>ResponseServlet</servlet-name>
 		<url-pattern>/ResponseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddData</servlet-name>
+		<url-pattern>/AddData</url-pattern>
 	</servlet-mapping>
  
 	<context-param>

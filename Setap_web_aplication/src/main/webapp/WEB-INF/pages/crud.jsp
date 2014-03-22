@@ -85,6 +85,20 @@
 				});
 			}
 		}
+		
+		
+		$(document).ready(function() {
+			var oTable = $('#dg').dataTable(
+							{
+								"processing" : true,
+								"ajax" : {
+									"url" : "data1",
+									"dataSrc" : "demo",
+									"type" : "GET"
+								}
+							});
+		});
+		
 	</script>
 </head>
 <body>
@@ -96,7 +110,6 @@
 	</div>
 	
 	<table id="dg" title="My Users" class="easyui-datagrid" style="width:700px;height:250px"
-			url="/data1" 
 			toolbar="#toolbar" pagination="true"
 			rownumbers="true" fitColumns="true" singleSelect="true">
 		<thead>
@@ -108,6 +121,7 @@
 			</tr>
 		</thead>
 	</table>
+	
 	<div id="toolbar">
 		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
 		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>

@@ -32,7 +32,7 @@
 		</tr>
 		<tr>
 			<td>Description :
-			 <textarea rows="2" cols="100">Add Commenst ablot the check point</textarea>
+			 <textarea rows="2" cols="100">Add Comments about the check point</textarea>
 			</td>
 		</tr>
 			

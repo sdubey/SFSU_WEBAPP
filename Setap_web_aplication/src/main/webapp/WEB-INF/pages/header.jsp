@@ -31,10 +31,9 @@ background-color:#dddddd;
 <h4 align="center">SETAP Data collection</h4>		
 <ul>
 <li><a href="home">Home </a></li>
-<li><a href="InstructorLog"> Data Log </a></li>
-<li><a href="InstructorLog"> s</a></li>
+<li><a href="InstructorLog">Data Logs</a></li>
 <li><a href="ContactUs"> Contact </a></li>
-<li><a href="#about">About </a></li>
+<li><a href="#about"> About </a></li>
 </ul>
 <br>
 </body>

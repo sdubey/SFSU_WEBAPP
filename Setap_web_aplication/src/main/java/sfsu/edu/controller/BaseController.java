@@ -1,20 +1,10 @@
 package sfsu.edu.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.stringpool.bean.CheckPointBean;
-import com.stringpool.bean.DBConnectionUtil;
 
 @Controller
 @RequestMapping("/")
@@ -34,7 +24,7 @@ public class BaseController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getPages() {
 
-		ModelAndView model = new ModelAndView("sdu");
+		ModelAndView model = new ModelAndView("login");
 		return model;
 
 	}
@@ -45,21 +35,7 @@ public class BaseController {
 		return model;
 
 	}
-
-	@RequestMapping(value = "/data1", method = RequestMethod.GET)
-	public void getTermsConditions1(HttpServletRequest request,
-			HttpServletResponse response) {
-
-		PrintWriter out;
-		try {
-			out = response.getWriter();
-			String json = "{ \"demo\":[[\"John\",\"Sam\",\"Sola\",\"Accun\"],[\"Raj\",\"Raj\",\"Sanjosh\",\"CA\"]]}";
-			out.println(json);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
+	
 	
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
 	public ModelAndView getTermsConditions12() {
@@ -69,7 +45,7 @@ public class BaseController {
 
 	@RequestMapping(value = "/checkpoints", method = RequestMethod.GET)
 	public ModelAndView getCounselor() {
-		ModelAndView model = new ModelAndView("crud");
+		ModelAndView model = new ModelAndView("create_update_checkpoint");
 		return model;
 
 	}
@@ -137,5 +113,7 @@ public class BaseController {
 		return model;
 
 	}
+	
+	
 
 }

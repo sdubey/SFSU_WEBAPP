@@ -32,7 +32,7 @@ public class DBConnectionUtil {
 			{
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = DriverManager
-						.getConnection("jdbc:mysql://localhost:3306/test","root", "abcd!234");
+						.getConnection("jdbc:mysql://localhost:3306/test","root", "Password1");
 				
 				statement = connection.createStatement();
 			      // Result set get the result of the SQL query

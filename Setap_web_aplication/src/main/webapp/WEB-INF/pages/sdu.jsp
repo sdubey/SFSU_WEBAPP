@@ -30,11 +30,16 @@
 		<table cellpadding="0" cellspacing="0" border="0" class="display"
 			id="example">
 			<thead>
-				<tr>
-					<th width="10%">First Name</th>
-					<th width="10%">Last Name</th>
-					<th width="10%">Address 1</th>
-					<th width="10%">Address 2</th>
+				<tr>			
+					<th width="10%">check_pointID</th>
+					<th width="10%">class_session</th>
+					<th width="10%">team_number</th>
+					<th width="10%">creation_date</th>
+					<th width="10%">due_date</th>
+					<th width="10%">issue_status</th>
+					<th width="10%">closed_date</th>
+					<th width="10%">description</th>
+					<th width="10%">email_notification</th>
 
 
 				</tr>
