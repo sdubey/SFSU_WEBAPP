@@ -27,6 +27,13 @@
 		<servlet-name>AddData</servlet-name>
 		<servlet-class>sfsu.edu.controller.AddData</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteRecord</display-name>
+		<servlet-name>DeleteRecord</servlet-name>
+		<servlet-class>sfsu.edu.controller.DeleteRecord</servlet-class>
+	</servlet>
  
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
@@ -39,6 +46,10 @@
 	<servlet-mapping>
 		<servlet-name>AddData</servlet-name>
 		<url-pattern>/AddData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteRecord</servlet-name>
+		<url-pattern>/DeleteRecord</url-pattern>
 	</servlet-mapping>
  
 	<context-param>

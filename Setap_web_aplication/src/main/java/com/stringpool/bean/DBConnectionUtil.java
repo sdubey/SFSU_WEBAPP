@@ -2,6 +2,7 @@ package com.stringpool.bean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,51 +14,96 @@ public class DBConnectionUtil {
 
 	/**
 	 * @param args
+	 * @throws SQLException 
+	 * @throws ClassNotFoundException 
 	 */
 	
 	
+	public static void addRecord(Connection connection, CheckPointBean checkpoint)
+	{
+		PreparedStatement preparedStatement = null;
+		//String deleteSQL = "insert into checkpoints values(?,?,?,?,?) ";
+		String insertSQL= "insert into checkpoints values (null,?,?,?,?,?,'20140206','testing','Y')";
+
+
+		try {
+			preparedStatement = connection
+				      .prepareStatement(insertSQL);
+			
+			preparedStatement.setString(1,checkpoint.getClass_session());
+			preparedStatement.setString(2,checkpoint.getTeam_number());
+			preparedStatement.setString(3,checkpoint.getCreation_date());
+			preparedStatement.setString(4, checkpoint.getDue_date());
+			preparedStatement.setString(5, checkpoint.getIssue_status());
+			
+		    preparedStatement.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
-	@SuppressWarnings("null")
-	public static List<CheckPointBean> getDBData()
+	
+	
+	public static Connection getConnection() throws SQLException, ClassNotFoundException
+	{
+		 Connection connection = null;
+		 
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager
+					.getConnection("jdbc:mysql://localhost:3306/test","root", "Password1");
+	
+		 return connection;
+	}
+	
+	
+	public static void deleteRecord(int id, Connection connection)
+	{
+		PreparedStatement preparedStatement = null;
+	
+		String deleteSQL = "delete from checkpoints where check_pointID = ?";
+		try {
+			preparedStatement = connection
+				      .prepareStatement(deleteSQL);
+			preparedStatement.setInt(1,id);
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static List<CheckPointBean> getDBData(Connection connection)
 	{
 		  Statement statement = null;
 		  ResultSet resultSet = null;
-		  Connection connection = null;
 		  List<CheckPointBean> lst = new ArrayList<CheckPointBean>();
-			  
-
-	        System.out.println("-------- MySQL JDBC Connection Testing ------------");
-			 
+					 
 			try
 			{
-				Class.forName("com.mysql.jdbc.Driver");
-				connection = DriverManager
-						.getConnection("jdbc:mysql://localhost:3306/test","root", "Password1");
 				
 				statement = connection.createStatement();
-			      // Result set get the result of the SQL query
 			      resultSet = statement
 			          .executeQuery("select * from checkpoints");
 			
 			      while (resultSet.next())
-			      {	 
+			      {	 			    	  
 			    	  CheckPointBean obj = new CheckPointBean();
-			    	  obj.setCheck_pointID(resultSet.getString(1));
-			    	  obj.setClass_session(resultSet.getString(2));
-			    	  obj.setClosed_date(resultSet.getString(3));
-			    	  obj.setCreation_date(resultSet.getString(4));
-			    	  obj.setDescription(resultSet.getString(5));
-			    	  obj.setDue_date(resultSet.getString(6));
-			    	  obj.setEmail_notification(resultSet.getString(7));
-			    	  obj.setIssue_status(resultSet.getString(6));
-			    	  obj.setTeam_number(resultSet.getString(9));
-			    
+			    	  obj.setCheck_pointID(resultSet.getString("check_pointID"));
+			    	  obj.setClass_session(resultSet.getString("class_session"));
+			    	  obj.setClosed_date(resultSet.getString("closed_date"));
+			    	  obj.setCreation_date(resultSet.getString("creation_date"));
+			    	  obj.setDescription(resultSet.getString("description"));
+			    	  obj.setDue_date(resultSet.getString("due_date"));
+			    	  obj.setEmail_notification(resultSet.getString("email_notification"));
+			    	  obj.setIssue_status(resultSet.getString("issue_status"));
+			    	  obj.setTeam_number(resultSet.getString("team_number"));
 			    	  lst.add(obj);
-			      }
-				
+			      }		
 			
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -65,11 +111,4 @@ public class DBConnectionUtil {
 	
 	}
 	
-	
-	
-	public static void main(String[] args) {
-		
-		System.out.println(getDBData());
-		}
-
 }

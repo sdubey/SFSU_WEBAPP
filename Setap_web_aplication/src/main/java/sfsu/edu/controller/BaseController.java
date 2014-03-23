@@ -1,10 +1,18 @@
 package sfsu.edu.controller;
 
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.stringpool.bean.CheckPointBean;
+import com.stringpool.bean.DBConnectionUtil;
 
 @Controller
 @RequestMapping("/")
@@ -15,12 +23,59 @@ public class BaseController {
 
 		model.addAttribute("message",
 				"Maven Web Project + Spring 3 MVC - welcome()");
-
-		// Spring uses InternalResourceViewResolver and return back index.jsp
 		return "index";
 
 	}
+	
+	
+	@RequestMapping(value = "/deleteRecord", method = RequestMethod.GET)
+	public void DeleteData(HttpServletRequest request,HttpServletResponse response) {
+	    int id = Integer.parseInt(request.getParameter("id"));	
+		System.out.println("id is: " + id);
+		System.out.println("request received is: " + request.toString());
+		System.out.println("yuhoo i came here");
+		try {
+			DBConnectionUtil.deleteRecord(id, DBConnectionUtil.getConnection());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
+	
+	
+	@RequestMapping(value = "/addRecord", method = RequestMethod.POST)
+	public void AddData(HttpServletRequest request,HttpServletResponse response) {
+	    String class_session = request.getParameter("class_session");	
+	    String team_number = request.getParameter("team_number");	
+	    String creation_date = request.getParameter("creation_date");	
+	    String due_date = request.getParameter("due_date");	
+	    String issue_status = request.getParameter("issue_status");	
+		
+	    CheckPointBean check_point = new CheckPointBean();
+	    check_point.setClass_session(class_session);
+	    check_point.setTeam_number(team_number);
+	    check_point.setCreation_date(creation_date);
+	    check_point.setDue_date(due_date);
+	    check_point.setIssue_status(issue_status);
+	   
+	    
+	    try {
+			DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getPages() {
 

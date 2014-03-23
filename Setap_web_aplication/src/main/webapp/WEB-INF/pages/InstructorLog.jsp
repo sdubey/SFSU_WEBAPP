@@ -4,10 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<title>Instruction_Log</title>
+   <link href="resources/css/demo_page.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/demo_table.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/demo_table_jui.css" rel="stylesheet" type="text/css" />
+        <link href="resources/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all" />
+
+</head> 
 <body>
-	<table border="3.0">
+	<table id="instruction_logs" border="3.0" class="display">
 		<tr>
 			<td colspan="2">
 				<table border="4.0" >

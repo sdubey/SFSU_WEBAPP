@@ -24,13 +24,13 @@
             $("#companies").dataTable({"sPaginationType": "full_numbers",
  			   						   "bJQueryUI": true})
             .makeEditable({sDeleteHttpMethod: "GET",
-                		   sDeleteURL: "/Company/DeleteCompany",
+                		   sDeleteURL: "deleteRecord",
                 		   sDeleteRowButtonId: "btnDeleteRow",
                 		   sAddNewRowFormId: "formAddNewRow",
                            sAddNewRowButtonId: "btnAddNewRow",
                            sAddNewRowOkButtonId: "btnAddNewRowOk",
                            sAddNewRowCancelButtonId: "btnAddNewRowCancel",
-                           sAddURL: "/Company/AddNewRow",
+                           sAddURL: "addRecord",
                            sAddHttpMethod: "POST",});
         });
         </script>
@@ -54,16 +54,16 @@
 					    </tr>
                     </thead>
                     <tbody>
-                      <% for(CheckPointBean c: DBConnectionUtil.getDBData()){ %>
-                    <tr>
-                         <td><%=c.getCheck_pointID()%></td>
-                         <td><%=c.getClass_session()%></td>
-                         <td><%=c.getTeam_number()%></td>
-                         <td><%=c.getCreation_date()%></td>
-                         <td><%=c.getDue_date()%></td>
-                         <td><%=c.getIssue_status()%></td>
-                   </tr>
-                <% } %>
+                      <% for(CheckPointBean c: DBConnectionUtil.getDBData(DBConnectionUtil.getConnection())){ %>
+	                    <tr id="<%=c.getCheck_pointID()%>">
+	                         <td><%=c.getCheck_pointID()%></td>
+	                         <td><%=c.getClass_session()%></td>
+	                         <td><%=c.getTeam_number()%></td>
+	                         <td><%=c.getCreation_date()%></td>
+	                         <td><%=c.getDue_date()%></td>
+	                         <td><%=c.getIssue_status()%></td>
+	                   </tr>
+	                <% } %>
                     </tbody>
                 </table>
                 
