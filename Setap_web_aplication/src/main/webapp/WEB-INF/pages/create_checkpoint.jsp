@@ -19,10 +19,9 @@
 		</tr>
 		<tr>
 			<td>Status : <select name="Choose Number" title="Choose Number">
-					<option value="1">Open</option>
-					<option value="2">New</option>
-					<option value="3" selected>Closed</option>
-					<option value="4">Reopen</option>
+					<option value="1">OPEN</option>
+					<option value="2">CLOSE</option>
+					<option value="3" selected>OVER DUE</option>
 			</select>
 			</td>
 		</tr>

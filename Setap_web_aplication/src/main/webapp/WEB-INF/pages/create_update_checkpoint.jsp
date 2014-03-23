@@ -75,10 +75,7 @@
                 <button id="btnAddNewRow">Add an entry</button>
                 
       			<form id="formAddNewRow" action="#" title="Add new row">
-			        <input type="hidden" id="id" name="id" value="-1" rel="0" />
-			        <label for="class_session">class_session</label><input type="text" 
-			               name="class_session" id="class_session" class="required" rel="1" />
-			        <br />
+			       
 			        <label for="team_number">team_number</label>
 			          <input type="text" name="team_number" id="team_number" rel="2" />
 			        <br />
@@ -88,12 +85,17 @@
 			        <label for="due_date">due_date</label>
 			        	<input type="date" id="due_date" rel="4">
 			        <br />
-			        <label for="issue_status">issue_status</label>
-			        	 <input type="text" name="issue_status" id="issue_status" rel="5"/>
+			        <label for="issue_status">Status :</label>
+			        <select name="Choose Number" title="Choose Number">
+					<option value="1">OPEN</option>
+					<option value="2">CLOSE</option>
+					<option value="3" selected>OVER DUE</option>
+					</select>
+					 <br />
+					<label for="description">Description</label>
+			        	 <input type="text" name="team_number" id="team_number" rel="2" />
 			        <br />
-			    	<label for="issue_status">Email_notification</label>
-			        	 <input type="text" name="email_notification" id="email_notification" rel="6"/>
-			        <br />
+			        
 			    	<button id="btnAddNewRowOk">Add</button>
 			    	<button id="btnAddNewRowCancel">Cancel</button>
 				</form>
