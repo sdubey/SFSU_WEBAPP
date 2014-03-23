@@ -44,24 +44,28 @@
 	
                 <table id="companies" class="display">
                     <thead>
-                        <tr>                       
-                             <th>check_pointID </th>
-							 <th>class_session</th>
-							 <th>team_number</th>
+                        <tr>
+                        	 <th>issue_status</th>                       
+                         	 <th>team</th>
 							 <th>creation_date</th>
-							 <th>due_date</th>
-							 <th>issue_status</th>
+							 <th> due_date__</th>
+							 <th>closed_date</th>
+							 <th>description</th>
+							 <th>email</th>
+							 <th>Send Email</th>
 					    </tr>
                     </thead>
                     <tbody>
                       <% for(CheckPointBean c: DBConnectionUtil.getDBData(DBConnectionUtil.getConnection())){ %>
 	                    <tr id="<%=c.getCheck_pointID()%>">
-	                         <td><%=c.getCheck_pointID()%></td>
-	                         <td><%=c.getClass_session()%></td>
+	                         <td><%=c.getIssue_status()%></td>
 	                         <td><%=c.getTeam_number()%></td>
 	                         <td><%=c.getCreation_date()%></td>
 	                         <td><%=c.getDue_date()%></td>
-	                         <td><%=c.getIssue_status()%></td>
+	                         <td><%=c.getClosed_date()%></td>
+	                         <td><%=c.getDescription()%></td>
+	                         <td><%=c.getEmail_notification()%></td>
+	                         <td><button id="btnmil">Send Mail</button></td>
 	                   </tr>
 	                <% } %>
                     </tbody>
@@ -79,13 +83,16 @@
 			          <input type="text" name="team_number" id="team_number" rel="2" />
 			        <br />
 			        <label for="creation_date">creation_date</label>
-			          <input type="text" name="creation_date" id="creation_date" rel="3"/>
+			          <input type="date" name="creation_date" id="creation_date" rel="3">
 			        <br />
 			        <label for="due_date">due_date</label>
-			          <input type="text" name="due_date" id="due_date" rel="4"/>
+			        	<input type="date" id="due_date" rel="4">
 			        <br />
 			        <label for="issue_status">issue_status</label>
 			        	 <input type="text" name="issue_status" id="issue_status" rel="5"/>
+			        <br />
+			    	<label for="issue_status">Email_notification</label>
+			        	 <input type="text" name="email_notification" id="email_notification" rel="6"/>
 			        <br />
 			    	<button id="btnAddNewRowOk">Add</button>
 			    	<button id="btnAddNewRowCancel">Cancel</button>
