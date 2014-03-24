@@ -1,5 +1,6 @@
 package sfsu.edu.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,9 +51,9 @@ public class BaseController {
 	@RequestMapping(value = "/addRecord", method = RequestMethod.POST)
 	public ModelAndView AddData(HttpServletRequest request,HttpServletResponse response) {
 	   
-
+		
 		ModelAndView model = new ModelAndView("create_update_checkpoint");
-	
+		
 		//String class_session = request.getParameter("class_session");	
 	    String team_number = request.getParameter("team_number");	
 	    String creation_date = request.getParameter("creation_date");	
@@ -78,14 +79,18 @@ public class BaseController {
 	    check_point.setDescription(description);
 	    
 	    try {
-			DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);
-		} catch (SQLException e) {
+			int id = DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);
+			response.getWriter().print(id);
+	    } catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	    
 	    return model;
+	  
 	}
 
 	

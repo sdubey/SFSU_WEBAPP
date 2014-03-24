@@ -19,9 +19,13 @@ public class DBConnectionUtil {
 	 */
 	
 	
-	public static void addRecord(Connection connection, CheckPointBean checkpoint)
+	public static int addRecord(Connection connection, CheckPointBean checkpoint)
 	{
+		int autoIncKeyFromFunc = -1;
 		PreparedStatement preparedStatement = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
 		//String deleteSQL = "insert into checkpoints values(?,?,?,?,?) ";
 		
 		String insertSQL= "insert into checkpoints values (null,'S2014',?,?,?,?,?,?,'Y')";
@@ -29,6 +33,8 @@ public class DBConnectionUtil {
 		try {
 			preparedStatement = connection
 				      .prepareStatement(insertSQL);
+			
+			stmt = connection.createStatement();
 			
 			preparedStatement.setString(1,checkpoint.getTeam_number());
 			preparedStatement.setString(2,checkpoint.getCreation_date());
@@ -41,11 +47,26 @@ public class DBConnectionUtil {
 			System.out.println("prepared ststement is "+ preparedStatement);
 			
 		    preparedStatement.executeUpdate();
+		    
+		    
+		    
+		    rs = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+
+		    if (rs.next()) {
+		        autoIncKeyFromFunc = rs.getInt(1);
+		    } else {
+		    }
+
+		    rs.close();
+
+		    System.out.println("Key returned from " +
+		                       "'SELECT LAST_INSERT_ID()': " +
+		                       autoIncKeyFromFunc);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		return autoIncKeyFromFunc;
 	}
 	
 	

@@ -32,7 +32,7 @@
                            sAddNewRowCancelButtonId: "btnAddNewRowCancel",
                            sAddURL: "addRecord",
                            sAddHttpMethod: "POST",});
-        });
+             });
         </script>
         
         
@@ -51,7 +51,7 @@
 							 <th> due_date__</th>
 							 <th>closed_date</th>
 							 <th>description</th>
-							 <th>email</th>
+							  <th>email</th>
 							 <th>Send Email</th>
 					    </tr>
                     </thead>
@@ -65,7 +65,7 @@
 	                         <td><%=c.getClosed_date()%></td>
 	                         <td><%=c.getDescription()%></td>
 	                         <td><%=c.getEmail_notification()%></td>
-	                         <td><button id="btnmil">Send Mail</button></td>
+	                         <td><button id="btnmail">Send Mail</button></td>
 	                   </tr>
 	                <% } %>
                     </tbody>
@@ -84,26 +84,25 @@
 			        <br />
 			        
 			        <label for="creation_date">creation_date</label>
-			          <input type="date" name="creation_date" id="creation_date" rel="2">
+			          <input type="text" name="creation_date" id="creation_date" rel="2">
 			        <br />
 			        
 			        <label for="due_date">due_date</label>
-			        	<input type="date" name ="due_date" id="due_date" rel="3">
+			        	<input type="text" name ="due_date" id="due_date" rel="3">
 			        <br />
 			        
 			        <label for="closed_date">closed_date</label>
-			        	<input type="date" name="closed_date" id="closed_date" rel="4">
+			        	<input type="text" name="closed_date" id="closed_date" rel="4">
 			        <br />
 					 
 					<label for="description">Description</label>
 			        	 <input type="text" name="description" id="description" rel="5" />
 			        <br />
 			        
-			           <input type="hidden" name="hidden" id="hidden" rel="6" />
-				       <input type="hidden" name="hidden" id="hidden" rel="7" />
-				
+			        <input type="hidden" id="id" name="id" value="N" rel="6" />
+			        <input type="hidden" id="id" name="id" value="<button id='btnmail'>Send Mail</button>" rel="7" />		        
 			        
-			    	<button id="btnAddNewRowOk">Add</button>
+			       	<button id="btnAddNewRowOk">Add</button>
 			    	<button id="btnAddNewRowCancel">Cancel</button>
 				</form>
       			

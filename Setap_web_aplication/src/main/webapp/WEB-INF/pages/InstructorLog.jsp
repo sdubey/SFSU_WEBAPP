@@ -44,8 +44,22 @@
 				<table border="4.0" width="100%">
 					<tr>
 						<td>
-						Instructor : <input type="text"/><br>
-						Team # : <input type="text"/><br>
+						Instructor : 	
+								<select name="Choose professor" title="Instructor">
+								<option value="1">Sonal</option>
+								<option value="2">Mayank</option>
+								<option value="3" selected>Rupal</option>
+								</select>
+						<br>
+						Team # : <select name="Choose professor" title="Instructor">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3" selected>3</option>
+								<option value="4" selected>3</option>
+								<option value="5" selected>3</option>
+								
+								</select>
+								<br>
 						Date of meeting <input type="date" name="meeting_date" id="meeting_date"><br>
 						</td>
 						<td>
