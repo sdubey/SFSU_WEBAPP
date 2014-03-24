@@ -23,18 +23,22 @@ public class DBConnectionUtil {
 	{
 		PreparedStatement preparedStatement = null;
 		//String deleteSQL = "insert into checkpoints values(?,?,?,?,?) ";
-		String insertSQL= "insert into checkpoints values (null,?,?,?,?,?,'20140206','testing','Y')";
-
-
+		
+		String insertSQL= "insert into checkpoints values (null,'S2014',?,?,?,?,?,?,'Y')";
+		
 		try {
 			preparedStatement = connection
 				      .prepareStatement(insertSQL);
 			
-			preparedStatement.setString(1,checkpoint.getClass_session());
-			preparedStatement.setString(2,checkpoint.getTeam_number());
-			preparedStatement.setString(3,checkpoint.getCreation_date());
-			preparedStatement.setString(4, checkpoint.getDue_date());
-			preparedStatement.setString(5, checkpoint.getIssue_status());
+			preparedStatement.setString(1,checkpoint.getTeam_number());
+			preparedStatement.setString(2,checkpoint.getCreation_date());
+			preparedStatement.setString(3, checkpoint.getDue_date());
+			preparedStatement.setString(4, checkpoint.getIssue_status());
+			preparedStatement.setString(5, checkpoint.getClosed_date());
+			preparedStatement.setString(6, checkpoint.getDescription());
+			
+			
+			System.out.println("prepared ststement is "+ preparedStatement);
 			
 		    preparedStatement.executeUpdate();
 			

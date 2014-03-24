@@ -75,26 +75,33 @@
                 <button id="btnAddNewRow">Add an entry</button>
                 
       			<form id="formAddNewRow" action="#" title="Add new row">
-			       
-			        <label for="team_number">team_number</label>
-			          <input type="text" name="team_number" id="team_number" rel="2" />
-			        <br />
-			        <label for="creation_date">creation_date</label>
-			          <input type="date" name="creation_date" id="creation_date" rel="3">
-			        <br />
-			        <label for="due_date">due_date</label>
-			        	<input type="date" id="due_date" rel="4">
-			        <br />
 			        <label for="issue_status">Status :</label>
-			        <select name="Choose Number" title="Choose Number">
-					<option value="1">OPEN</option>
-					<option value="2">CLOSE</option>
-					<option value="3" selected>OVER DUE</option>
-					</select>
-					 <br />
-					<label for="description">Description</label>
-			        	 <input type="text" name="team_number" id="team_number" rel="2" />
+			        <input type="text" name="issue_status" id="issue_status" rel="0" />
+					<br />
+					
+			        <label for="team_number">team_number</label>
+			          <input type="text" name="team_number" id="team_number" rel="1" />
 			        <br />
+			        
+			        <label for="creation_date">creation_date</label>
+			          <input type="date" name="creation_date" id="creation_date" rel="2">
+			        <br />
+			        
+			        <label for="due_date">due_date</label>
+			        	<input type="date" name ="due_date" id="due_date" rel="3">
+			        <br />
+			        
+			        <label for="closed_date">closed_date</label>
+			        	<input type="date" name="closed_date" id="closed_date" rel="4">
+			        <br />
+					 
+					<label for="description">Description</label>
+			        	 <input type="text" name="description" id="description" rel="5" />
+			        <br />
+			        
+			           <input type="hidden" name="hidden" id="hidden" rel="6" />
+				       <input type="hidden" name="hidden" id="hidden" rel="7" />
+				
 			        
 			    	<button id="btnAddNewRowOk">Add</button>
 			    	<button id="btnAddNewRowCancel">Cancel</button>

@@ -50,19 +50,29 @@ public class BaseController {
 	@RequestMapping(value = "/addRecord", method = RequestMethod.POST)
 	public void AddData(HttpServletRequest request,HttpServletResponse response) {
 	   
-		String class_session = request.getParameter("class_session");	
+		//String class_session = request.getParameter("class_session");	
 	    String team_number = request.getParameter("team_number");	
 	    String creation_date = request.getParameter("creation_date");	
 	    String due_date = request.getParameter("due_date");	
 	    String issue_status = request.getParameter("issue_status");	
+	    String closed_date = request.getParameter("closed_date");	
+	    String description = request.getParameter("description");	
+	    
+	    System.out.println("team_number "+ team_number);
+	    System.out.println("creation_date "+ creation_date);
+	    System.out.println("due_date "+ due_date);
+	    System.out.println("issue_status "+ issue_status);
+	    System.out.println("closed_date "+ closed_date);
+	    System.out.println("description "+ description);
+	    
 		
 	    CheckPointBean check_point = new CheckPointBean();
-	    check_point.setClass_session(class_session);
 	    check_point.setTeam_number(team_number);
 	    check_point.setCreation_date(creation_date);
 	    check_point.setDue_date(due_date);
 	    check_point.setIssue_status(issue_status);
-	   
+	    check_point.setClosed_date(closed_date);
+	    check_point.setDescription(description);
 	    
 	    try {
 			DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);

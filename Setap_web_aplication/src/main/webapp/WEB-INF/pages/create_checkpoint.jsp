@@ -22,6 +22,7 @@
 					<option value="1">OPEN</option>
 					<option value="2">CLOSE</option>
 					<option value="3" selected>OVER DUE</option>
+					<option value="4">Reopen</option>
 			</select>
 			</td>
 		</tr>
