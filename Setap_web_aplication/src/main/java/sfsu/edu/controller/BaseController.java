@@ -48,8 +48,11 @@ public class BaseController {
 	
 	
 	@RequestMapping(value = "/addRecord", method = RequestMethod.POST)
-	public void AddData(HttpServletRequest request,HttpServletResponse response) {
+	public ModelAndView AddData(HttpServletRequest request,HttpServletResponse response) {
 	   
+
+		ModelAndView model = new ModelAndView("create_update_checkpoint");
+	
 		//String class_session = request.getParameter("class_session");	
 	    String team_number = request.getParameter("team_number");	
 	    String creation_date = request.getParameter("creation_date");	
@@ -77,12 +80,12 @@ public class BaseController {
 	    try {
 			DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	    
+	    return model;
 	}
 
 	
