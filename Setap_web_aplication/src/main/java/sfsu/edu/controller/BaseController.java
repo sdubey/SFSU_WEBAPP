@@ -27,73 +27,113 @@ public class BaseController {
 		return "index";
 
 	}
-	
-	
+
+	@RequestMapping(value = "/validate", method = RequestMethod.POST)
+	public ModelAndView validateData(HttpServletRequest request,
+			HttpServletResponse response) {
+
+		ModelAndView model = new ModelAndView();
+		String user = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		System.out.println("user is "+ user);
+		System.out.println("password is "+ password);
+
+		if (user.equals("sfsu") && password.equals("sfsu")) {
+			model.setViewName("home");
+		} else {
+			try {
+				response.getWriter().print("Plaese try again");
+				model.setViewName("login");
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return model;
+	}
+
 	@RequestMapping(value = "/deleteRecord", method = RequestMethod.GET)
-	public void DeleteData(HttpServletRequest request,HttpServletResponse response) {
-	    int id = Integer.parseInt(request.getParameter("id"));	
+	public void DeleteData(HttpServletRequest request,
+			HttpServletResponse response) {
+		int id = Integer.parseInt(request.getParameter("id"));
 		System.out.println("id is: " + id);
 		System.out.println("request received is: " + request.toString());
 		System.out.println("yuhoo i came here");
 		try {
 			DBConnectionUtil.deleteRecord(id, DBConnectionUtil.getConnection());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	
-	
 	@RequestMapping(value = "/addRecord", method = RequestMethod.POST)
-	public ModelAndView AddData(HttpServletRequest request,HttpServletResponse response) {
-	   
-		
+	public ModelAndView AddData(HttpServletRequest request,
+			HttpServletResponse response) {
+
 		ModelAndView model = new ModelAndView("create_update_checkpoint");
-		
-		//String class_session = request.getParameter("class_session");	
-	    String team_number = request.getParameter("team_number");	
-	    String creation_date = request.getParameter("creation_date");	
-	    String due_date = request.getParameter("due_date");	
-	    String issue_status = request.getParameter("issue_status");	
-	    String closed_date = request.getParameter("closed_date");	
-	    String description = request.getParameter("description");	
-	    
-	    System.out.println("team_number "+ team_number);
-	    System.out.println("creation_date "+ creation_date);
-	    System.out.println("due_date "+ due_date);
-	    System.out.println("issue_status "+ issue_status);
-	    System.out.println("closed_date "+ closed_date);
-	    System.out.println("description "+ description);
-	    
-		
-	    CheckPointBean check_point = new CheckPointBean();
-	    check_point.setTeam_number(team_number);
-	    check_point.setCreation_date(creation_date);
-	    check_point.setDue_date(due_date);
-	    check_point.setIssue_status(issue_status);
-	    check_point.setClosed_date(closed_date);
-	    check_point.setDescription(description);
-	    
-	    try {
-			int id = DBConnectionUtil.addRecord(DBConnectionUtil.getConnection(),check_point);
+
+		// String class_session = request.getParameter("class_session");
+		String team_number = request.getParameter("team_number");
+		String creation_date = request.getParameter("creation_date");
+		String due_date = request.getParameter("due_date");
+		String issue_status = request.getParameter("issue_status");
+		String closed_date = request.getParameter("closed_date");
+		String description = request.getParameter("description");
+
+		System.out.println("team_number " + team_number);
+		System.out.println("creation_date " + creation_date);
+		System.out.println("due_date " + due_date);
+		System.out.println("issue_status " + issue_status);
+		System.out.println("closed_date " + closed_date);
+		System.out.println("description " + description);
+
+		CheckPointBean check_point = new CheckPointBean();
+		check_point.setTeam_number(team_number);
+		check_point.setCreation_date(creation_date);
+		check_point.setDue_date(due_date);
+		check_point.setIssue_status(issue_status);
+		check_point.setClosed_date(closed_date);
+		check_point.setDescription(description);
+
+		try {
+			int id = DBConnectionUtil.addRecord(
+					DBConnectionUtil.getConnection(), check_point);
 			response.getWriter().print(id);
-	    } catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    
-	    return model;
-	  
+
+		return model;
+
 	}
 
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public ModelAndView getTests() {
+
+		ModelAndView model = new ModelAndView("about");
+		return model;
+
+	}
 	
+	
+	
+
+	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
+	public ModelAndView getPrivecy() {
+
+		ModelAndView model = new ModelAndView("privacy");
+		return model;
+
+	}
+
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getPages() {
@@ -109,8 +149,7 @@ public class BaseController {
 		return model;
 
 	}
-	
-	
+
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
 	public ModelAndView getTermsConditions12() {
 		ModelAndView model = new ModelAndView("terms_conditions");
@@ -124,6 +163,19 @@ public class BaseController {
 
 	}
 
+	
+	
+	
+
+	@RequestMapping(value = "/admin_login", method = RequestMethod.GET)
+	public ModelAndView getAdminLogin() {
+
+		ModelAndView model = new ModelAndView("admin_login");
+		return model;
+
+	}
+
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView getLogin() {
 
@@ -179,7 +231,7 @@ public class BaseController {
 		return model;
 
 	}
-	
+
 	@RequestMapping(value = "/view_data1", method = RequestMethod.GET)
 	public ModelAndView getViewData1() {
 
@@ -187,7 +239,5 @@ public class BaseController {
 		return model;
 
 	}
-	
-	
 
 }

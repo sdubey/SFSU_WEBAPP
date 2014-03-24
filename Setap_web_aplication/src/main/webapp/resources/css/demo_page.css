@@ -17,10 +17,40 @@
 	padding: 0;
 }
 
+#dt_example #row {
+	background:#00FF00;
+}
+
+#dt_example #column {
+	width: 45%;
+	height:300px;
+	padding:5px 10px; 
+	background:#dddddd;
+	border:2px solid #a1a1a1;
+	border-radius:25px;
+}
+
+#dt_example #column_broad {
+	width: 85%;
+	height:300px;
+	padding:5px 10px; 
+	background:#dddddd;
+	border:2px solid #a1a1a1;
+	border-radius:25px;
+}
+
+#dt_example #row {
+	width: 800px;
+	margin: 30px auto;
+	padding: 0;
+}
 
 #dt_example #footer {
-	margin: 50px auto 0 auto;
-	padding: 0;
+  width: 100%;	
+  background-color:#DCDCDC;
+  clear:both;
+  text-align:center;
+  color:#4E6CA3;
 }
 
 #dt_example #demo {
@@ -63,6 +93,14 @@
 	clear: both;
 }
 
+#dt_example hr {
+	margin-top: 4em;
+	line-height: 4m;
+	color: #4E6CA3;
+	border-bottom: 1px solid #B0BED9;
+	clear: both;
+}
+
 #dt_example h2 {
 	font-size: 1.2em;
 	font-weight: normal;
@@ -83,6 +121,15 @@
 #dt_example ul {
 	color: #4E6CA3;
 }
+
+
+#dt_example label {
+	margin-top: 1em;
+	font-size: 1.0em;
+	font-weight: normal;
+	color: #4E6CA3;
+}
+
 
 .css_right {
 	float: right;

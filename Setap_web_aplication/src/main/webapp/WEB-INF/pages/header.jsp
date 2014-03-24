@@ -1,40 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<head>
-<style>
-ul
-{
-list-style-type:none;
-margin:0;
-padding:0;
-overflow:hidden;
-}
-li
-{
-float:left;
-}
-a
-{
-display:block;
-width:60px;
-background-color:#dddddd;
-}
-</style>
-</head>
-<title>Insert title here</title>
+<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+<title>Header</title>
 </head>
 <body>
-<h4 align="center">SETAP Data collection</h4>		
-<ul>
-<li><a href="home">Home </a></li>
-<li><a href="InstructorLog">Data Logs</a></li>
-<li><a href="ContactUs"> Contact </a></li>
-<li><a href="#about"> About </a></li>
-</ul>
-<br>
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav">
+				    <li><h3>SETAP</h3></li>
+					<li><a href="home">Home </a></li>
+					<li><a href="InstructorLog">Data Logs</a></li>
+					<li><a href="ContactUs"> Contact </a></li>
+					<li><a href="about"> About </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br>
 </body>
 </html>

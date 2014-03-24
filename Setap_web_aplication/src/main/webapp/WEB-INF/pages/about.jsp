@@ -12,15 +12,18 @@
 </head>
 <body id=dt_example>
 	<div id="container">
-		<%@ include file="header.jsp"%>
+	   <%@ include file="header.jsp"%>
+		<h2>SETAP</h2>
+		<p>Modern software development today involves intensive software
+			engineering (SE) teamwork (where teams are often globally
+			distributed) with the goals of developing easy to use and
+			maintainable software (SW), on schedule and budget, and satisfying
+			intended specifications. The need for improved teaching and
+			</p>
+	<div id="footer">
+		<%@ include file="footer.jsp"%>
+	</div>
 
-		<div id="h2">
-			<h2>Contact US</h2>
-			<h2>Email us at : test@sfsu.edu</h2>
-		</div>
-		<div id="footer">
-			<%@ include file="footer.jsp"%>
-		</div>
 	</div>
 </body>
 </html>
