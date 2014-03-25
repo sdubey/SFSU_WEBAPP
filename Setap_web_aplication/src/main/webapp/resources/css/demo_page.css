@@ -30,6 +30,25 @@
 	border-radius:25px;
 }
 
+#dt_example #column_ {
+	width: 95%;
+	height:justified;
+	padding:5px 10px; 
+	background:#dddddd;
+	border:2px solid #a1a1a1;
+	border-radius:25px;
+}
+
+
+#dt_example #column_inner_ {
+	width: 40%;
+	height:110px;
+	padding:5px 10px; 
+	border:2px solid #a1a1a1;
+	border-radius:25px;
+}
+
+
 #dt_example #column_broad {
 	width: 85%;
 	height:300px;

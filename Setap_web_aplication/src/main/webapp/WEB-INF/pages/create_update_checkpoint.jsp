@@ -38,7 +38,18 @@
                            sAddNewRowOkButtonId: "btnAddNewRowOk",
                            sAddNewRowCancelButtonId: "btnAddNewRowCancel",
                            sAddURL: "addRecord",
-                           sAddHttpMethod: "POST",});
+                           sAddHttpMethod: "POST",
+                           aoColumns: [{type: 'select',
+										onblur: 'submit',
+										data: "{'':'Please select', 'OPEN':'OPEN','CLOSED':'CLOSED', 'OVERDUE':'OVERDUE', 'REOPEN':'REOPEN'}"
+										},
+                              			null,
+                              			{},
+                              			{},
+                              			{},
+                              			{},
+                              			null,
+                              			null]});
              });
         </script>
 
@@ -88,22 +99,15 @@
 					<option value="CLOSED">CLOSED</option>
 					<option value="REOPEN">REOPEN</option>
 					<option value="OVERDUE">OVERDUE</option>
-				</select> <br /> 
-				
-				<label for="team_number">team_number</label> <input
+				</select> <br /> <label for="team_number">team_number</label> <input
 					type="text" name="team_number" id="team_number" rel="1" /> <br />
 
 				<label for="creation_date">creation_date</label> <input type="text"
-					name="creation_date" id="creation_date" rel="2"> <br /> 
-					
-				<label for="due_date">due_date</label> <input type="text" name="due_date"
-					id="due_date" rel="3"> <br /> 
-					
-				<label for="closed_date">closed_date</label>
+					name="creation_date" id="creation_date" rel="2"> <br /> <label
+					for="due_date">due_date</label> <input type="text" name="due_date"
+					id="due_date" rel="3"> <br /> <label for="closed_date">closed_date</label>
 				<input type="text" name="closed_date" id="closed_date" rel="4">
-				<br /> 
-				
-				<label for="description">Description</label> <input
+				<br /> <label for="description">Description</label> <input
 					type="text" name="description" id="description" rel="5" /> <br />
 
 				<input type="hidden" id="id" name="id" value="N" rel="6" /> <input
