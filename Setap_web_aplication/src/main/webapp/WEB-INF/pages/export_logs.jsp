@@ -16,6 +16,8 @@
 	type="text/css" media="all" />
 <link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css"
 	rel="stylesheet" type="text/css" media="all" />
+<link href="resources/css/TableTools.css" rel="stylesheet"
+	type="text/css" />
 
 <script src="resources/js/jquery.min.js" type="text/javascript"></script>
 <script src="resources/js/jquery.dataTables.min.js"
@@ -23,15 +25,16 @@
 <script src="resources/js/jquery.jeditable.js" type="text/javascript"></script>
 <script src="resources/js/jquery-ui.js" type="text/javascript"></script>
 <script src="resources/js/jquery.validate.js" type="text/javascript"></script>
-<script src="resources/js/jquery.dataTables.editable.js"
-	type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="resources/js/ZeroClipboard.js"></script>
+<script type="text/javascript" charset="utf-8" src="resources/js/TableTools.js"></script>
+<script type="text/javascript" src="resources/js/jquery.dataTables.editable.js"></script>
 
 <script type="text/javascript">
 $(document).ready( function () {
     $('#example').dataTable( {
         "sDom": 'T<"clear">lfrtip',
         "oTableTools": {
-            "sSwfPath": "/swf/copy_csv_xls_pdf.swf"
+            "sSwfPath": "resources/swf/copy_csv_xls_pdf.swf"
         }
     } );
 } );
