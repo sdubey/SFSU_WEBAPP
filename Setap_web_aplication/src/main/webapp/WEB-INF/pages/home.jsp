@@ -24,9 +24,8 @@
 				survived not only five centuries, but also the leap into electronicv
 				typesetting, remaining essentially</p>
 		</div>
-		<div id="a">
-			<a href="InstructorLog"> Enter class logs for SETAP</a>
-		</div>
+			<a href="InstructorLog"> Enter class logs for SETAP</a><br>
+			<a href="export_logs"> View/Export Data</a>
 	<%@ include file="footer.jsp"%>
 	</div>
 	

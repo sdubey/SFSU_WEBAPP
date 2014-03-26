@@ -19,6 +19,59 @@ public class DBConnectionUtil {
 	 */
 	
 	
+	public static int addRecordInstruction(Connection connection, InstructionLogBean instructor_log)
+	{
+		int autoIncKeyFromFunc = -1;
+		PreparedStatement preparedStatement = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		String inserStatement= "insert into InstructionLogs values(null,'f2014',?,?,?,?,?,?,?,?)";
+
+		try {
+			preparedStatement = connection
+				      .prepareStatement(inserStatement);
+			
+			stmt = connection.createStatement();
+			
+		//  insert into InstructionLogs values(null,'f2014','Sonal',6,'2014-02-22','agile',0,'none',4,5)
+			
+			preparedStatement.setString(1,instructor_log.getInstructor());
+			preparedStatement.setInt(2,instructor_log.getTeam());
+			preparedStatement.setString(3,instructor_log.getMeeting_date());
+			preparedStatement.setString(4, instructor_log.getMeetingReason());
+			preparedStatement.setInt(5, instructor_log.getAbsent_member());
+			preparedStatement.setString(6, instructor_log.getTextarea_reason());
+			preparedStatement.setInt(7, instructor_log.getTeam_lead_effectiveness());
+			preparedStatement.setInt(8, instructor_log.getTeam_effectiveness());
+			
+			
+			System.out.println("prepared ststement is "+ preparedStatement);
+			
+		    preparedStatement.executeUpdate();
+		    
+		    
+		    
+		    rs = stmt.executeQuery("SELECT LAST_INSERT_ID()");
+
+		    if (rs.next()) {
+		        autoIncKeyFromFunc = rs.getInt(1);
+		    } else {
+		    }
+
+		    rs.close();
+
+		    System.out.println("Key returned from " +
+		                       "'SELECT LAST_INSERT_ID()': " +
+		                       autoIncKeyFromFunc);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return autoIncKeyFromFunc;
+
+	}
+	
 	public static int addRecord(Connection connection, CheckPointBean checkpoint)
 	{
 		int autoIncKeyFromFunc = -1;
@@ -126,6 +179,44 @@ public class DBConnectionUtil {
 			    	  obj.setEmail_notification(resultSet.getString("email_notification"));
 			    	  obj.setIssue_status(resultSet.getString("issue_status"));
 			    	  obj.setTeam_number(resultSet.getString("team_number"));
+			    	  lst.add(obj);
+			      }		
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return lst;
+	
+	}
+	
+	
+	
+	public static List<InstructionLogBean> getInstructionLogData(Connection connection)
+	{
+		  Statement statement = null;
+		  ResultSet resultSet = null;
+		  List<InstructionLogBean> lst = new ArrayList<InstructionLogBean>();
+					 
+			try
+			{
+				
+				statement = connection.createStatement();
+			      resultSet = statement
+			          .executeQuery("select * from InstructionLogs");
+	
+			      while (resultSet.next())
+			      {	 			    	  
+			    	  InstructionLogBean obj = new InstructionLogBean();
+			    	  obj.setTeam(resultSet.getInt("team"));
+			    	  obj.setSemester(resultSet.getString("semester"));
+			    	  obj.setInstructor(resultSet.getString("instructor"));
+			    	  obj.setMeeting_date(resultSet.getString("meeting_date"));
+			    	  obj.setAbsent_member(resultSet.getInt("absent_member"));
+			    	  obj.setTextarea_reason(resultSet.getString("absence_reason"));
+			    	  obj.setTeam_lead_effectiveness(resultSet.getInt("team_lead_effectiveness"));
+			    	  obj.setTeam_effectiveness(resultSet.getInt("team_effectiveness"));
+			    	  obj.setLog_id(resultSet.getInt("log_id"));
+				    	  
 			    	  lst.add(obj);
 			      }		
 			

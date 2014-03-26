@@ -12,85 +12,72 @@
 </head>
 </head>
 <body id="dt_example">
-
-	<%@ include file="header.jsp"%>
-
 	<div id="container">
-		<div id="column_">
-			<h5 align="center">Instructor Class Log (Rev. 8/21/13)</h5>
-			<p>Use this log to record pertinent observations of student team
-				work during the development of the final class project. This form
-				can be used to log observations during instructor meeting with teams
-				(either regular scrum meetings during class or extra meetings
-				outside the classroom), or at any time when instructor gets involved
-				in resolving student team problems and issues. Please keep hard copy
-				of all logs and group them by student teams. They will be used later
-				for team evaluation, grading and research on teaching team work in
-				SE education.</p>
+	<%@ include file="header.jsp"%>
+		<div>
+			Instructor Class Log (Rev. 8/21/13)
 		</div>
+		<form id="instructer_logs" action="addInstruction"  method="post">
 			<div id="column_inner_" style="background-color:#FFFFFF;float:left;">
-				Instructor : <select name="Choose professor" title="Instructor">
+				<label>Instructor : <select name="select_instructor" title="Instructor">
 				<option value="1">Sonal</option>
 				<option value="2">Mayank</option>
-				<option value="3" selected>Rupal</option>
-			</select><br> Team # : <select name="Choose professor" title="Instructor">
+				<option value="3">Rupal</option>
+				<option value="4" selected="selected">Select Instructor</option>
+			</select></label>
+			<label> Team # : <select name="select_team" title="Instructor">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
-				<option value="4">3</option>
-				<option value="5">3</option>
-			</select><br>
-			Meeting Date <input type="date" name="meeting_date"
-				id="meeting_date"><br> 
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option selected="selected" value="6">Select Team</option>
+			</select></label>
+			<label>Meeting Date <input type="date" name="meeting_date"
+				id="meeting_date"></label>
 			</div>
 		
-		
-		
 		<div  id="column_inner_" style="background-color:#FFFFFF;float:right;">
-			This is recording a (Check one):<br> <input
-					type="checkbox" name="vehicle" value="Bike">Regular scrum
-					team meeting<br> <input type="checkbox" name="vehicle"
-					value="Car"> Extra team Meeting<br> <input
-					type="checkbox" name="vehicle" value="Bike">Teamwork Issue<br>
-					<input type="checkbox" name="vehicle" value="Car">Other
-	    </div>
-	   
-	  
-		
-		<div  id="column_inner_" style="background-color:#FFFFFF;float:right;">
-		<select name="Choose Number" title="Choose Number">
+			This is recording a (Check one):<br> 
+			<input type="checkbox" name="meetingReason" value="Regular scrum">Regular scrum team meeting<br>
+			<input type="checkbox" name="meetingReason" value="Extra team Meeting"> Extra team Meeting<br>
+			<input type="checkbox" name="meetingReason" value="Teamwork Issue">Teamwork Issue<br>
+			<input type="checkbox" name="meetingReason" value="Other">Other
+	    </div>    
+	    <hr>
+		<div  id="column_" style="background-color:#FFFFFF;float:left;">
+	    <label>select team absent member (Only for the record):
+	    <select name="Choose_absent_member" title="Choose Number">
+						<option value="1" selected="selected">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
-						<option value="3" selected>3</option>
+						<option value="3">3</option>
 						<option value="4">4</option>
-				</select> <br><textarea rows="2" cols="100">
-                Type Reason here
-                </textarea>
-		 </div>
-		
-		<div  id="column_inner_" style="background-color:#FFFFFF;float:left;">
-		<p>select team absect member </p>
+	    </select>
+	    </label>
+		<label>Type Reason for absence here <textarea rows="2" cols="10" name="textarea_reason"></textarea></label>
 		</div>
-		
+		<hr>
 		
 		<div  id="column_inner_" style="background-color:#FFFFFF;float:right;">
-		<p>Team's effectiveness : (1 poor, 5 excellent)</p> <input
-					type="radio" name="sex" value="male">1 <input type="radio"
-					name="sex" value="female">2 <input type="radio" name="sex"
-					value="female">3 <input type="radio" name="sex"
-					value="female">4 <input type="radio" name="sex"
-					value="female">5
+		<p>Team's effectiveness : (1 poor, 5 excellent)</p> 
+		<input type="radio" name="team_effectiveness" value="1">1 
+		<input type="radio" name="team_effectiveness" value="2">2 
+		<input type="radio" name="team_effectiveness" value="3">3 
+		<input type="radio" name="team_effectiveness" value="4">4
+		<input type="radio" name="team_effectiveness" value="5">5
 		 </div>
 		
 		<div  id="column_inner_" style="background-color:#FFFFFF;float:left;">
-		<p>Team Lead's effectiveness : (1 poor, 5 excellent)</p> <input
-					type="radio" name="sex" value="male">1 <input type="radio"
-					name="sex" value="female">2 <input type="radio" name="sex"
-					value="female">3 <input type="radio" name="sex"
-					value="female">4 <input type="radio" name="sex"
-					value="female">5
+		<p>Team Lead's effectiveness : (1 poor, 5 excellent)</p> 
+		<input type="radio" name="team_lead_effectiveness" value="1">1 
+		<input type="radio" name="team_lead_effectiveness" value="2">2 
+		<input type="radio" name="team_lead_effectiveness" value="3">3 
+		<input type="radio" name="team_lead_effectiveness" value="4">4
+		<input type="radio" name="team_lead_effectiveness" value="5">5
 		</div>
-		
+	    <hr>
+			
 		<div  id="column_" style="background-color:#FFFFFF;float:left;">
 		Checkpoints<br> <a href="checkpoints"> Create/
 									Update / View existing check point</a>
@@ -101,6 +88,7 @@
 			type="submit" value="Submit" align="right">
 		</div>
 			<%@ include file="footer.jsp"%>
+			</form>
 	</div>
 </body>
 
