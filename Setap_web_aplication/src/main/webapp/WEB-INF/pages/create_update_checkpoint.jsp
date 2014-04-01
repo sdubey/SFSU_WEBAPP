@@ -39,7 +39,9 @@
                            sAddNewRowCancelButtonId: "btnAddNewRowCancel",
                            sAddURL: "addRecord",
                            sAddHttpMethod: "POST",
-                           aoColumns: [{type: 'select',
+                           sUpdateURL: "updateRecord",
+                           aoColumns: [{indicator: 'Saving...',
+                        	   			type: 'select',
 										onblur: 'submit',
 										data: "{'':'Please select', 'OPEN':'OPEN','CLOSED':'CLOSED', 'OVERDUE':'OVERDUE', 'REOPEN':'REOPEN'}"
 										},

@@ -165,7 +165,18 @@ public class BaseController {
 
 	}
 
-	
+	@RequestMapping(value = "/updateRecord", method = RequestMethod.POST)
+	public void UpdateData(HttpServletRequest request,
+			HttpServletResponse response) {
+		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.println("id is: " + id);
+		System.out.println("yup, I came inside update record!");
+		System.out.println("column-name is: " + request.getParameter("columnName"));
+		System.out.println("column-id is: " + request.getParameter("columnId"));
+		System.out.println("column-position is: " + request.getParameter("columnPosition"));
+		System.out.println("rowId is: " + request.getParameter("rowId"));
+		System.out.println("value is: " + request.getParameter("value"));
+	}
 	
 	
 
