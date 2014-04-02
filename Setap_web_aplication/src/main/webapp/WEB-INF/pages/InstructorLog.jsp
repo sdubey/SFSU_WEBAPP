@@ -61,20 +61,20 @@
 		
 		<div  id="column_inner_" style="background-color:#FFFFFF;float:right;">
 		<p>Team's effectiveness : (1 poor, 5 excellent)</p> 
-		<input type="radio" name="team_effectiveness" value="1">1 
-		<input type="radio" name="team_effectiveness" value="2">2 
-		<input type="radio" name="team_effectiveness" value="3">3 
-		<input type="radio" name="team_effectiveness" value="4">4
-		<input type="radio" name="team_effectiveness" value="5">5
+		<input type="radio" name="team_effectiveness" value="1">&nbsp 1 &nbsp
+		<input type="radio" name="team_effectiveness" value="2">&nbsp 2 &nbsp
+		<input type="radio" name="team_effectiveness" value="3">&nbsp 3 &nbsp
+		<input type="radio" name="team_effectiveness" value="4">&nbsp 4&nbsp
+		<input type="radio" name="team_effectiveness" value="5">&nbsp 5&nbsp
 		 </div>
 		
 		<div  id="column_inner_" style="background-color:#FFFFFF;float:left;">
-		<p>Team Lead's effectiveness : (1 poor, 5 excellent)</p> 
-		<input type="radio" name="team_lead_effectiveness" value="1">1 
-		<input type="radio" name="team_lead_effectiveness" value="2">2 
-		<input type="radio" name="team_lead_effectiveness" value="3">3 
-		<input type="radio" name="team_lead_effectiveness" value="4">4
-		<input type="radio" name="team_lead_effectiveness" value="5">5
+		<p>Team Lead's effectiveness : (1 poor, 5 excellent)</p> &nbsp
+		<input type="radio" name="team_lead_effectiveness" value="1">&nbsp 1 &nbsp 
+		<input type="radio" name="team_lead_effectiveness" value="2">&nbsp 2 &nbsp
+		<input type="radio" name="team_lead_effectiveness" value="3">&nbsp 3 &nbsp
+		<input type="radio" name="team_lead_effectiveness" value="4">&nbsp 4 &nbsp
+		<input type="radio" name="team_lead_effectiveness" value="5">&nbsp 5 &nbsp
 		</div>
 	    <hr>
 			
