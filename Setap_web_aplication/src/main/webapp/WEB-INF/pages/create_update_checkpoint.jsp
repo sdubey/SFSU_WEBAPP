@@ -85,7 +85,12 @@
 						<td><%=c.getClosed_date()%></td>
 						<td><%=c.getDescription()%></td>
 						<td><%=c.getEmail_notification()%></td>
-						<td><button id="btnmail">Send Mail</button></td>
+						<td>
+							<form method="POST" action="sendemail">
+								<input name="checkPointId" type="hidden" value="<%=c.getCheck_pointID()%>">
+								<input type="submit" value="Send Email">
+							</form>
+						</td>
 					</tr>
 					<% } %>
 				</tbody>
@@ -112,9 +117,8 @@
 				<br /> <label for="description">Description</label> <input
 					type="text" name="description" id="description" rel="5" /> <br />
 
-				<input type="hidden" id="id" name="id" value="N" rel="6" /> <input
-					type="hidden" id="id" name="id"
-					value="<button id='btnmail'>Send Mail</button>" rel="7" />
+				<input type="hidden" id="id" name="id" value="N" rel="6" /> 
+				<input type="hidden" id="id" name="id" value="<button id='btnmail'>Send Mail</button>" rel="7" />
 
 				<button id="btnAddNewRowOk">Add</button>
 				<button id="btnAddNewRowCancel">Cancel</button>

@@ -1,7 +1,6 @@
 package sfsu.edu.controller;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -336,4 +335,12 @@ public class BaseController {
 
 	}
 
+	@RequestMapping(value = "/sendemail", method = RequestMethod.POST)
+	public void sendEmail(HttpServletRequest request,
+			HttpServletResponse response) {
+		int checkPointId = Integer.parseInt(request.getParameter("checkPointId"));
+		System.out.println("yup, I came inside send email function!");
+		System.out.println("id is: " + checkPointId);
+	}
+	
 }
