@@ -136,6 +136,38 @@ public class DBConnectionUtil {
 	}
 	
 	
+	
+	public static void updateCheckpointRecord(int id, Connection connection, String updatedValue, int colIdx) throws SQLException
+	{
+	
+		String field = null;
+		
+		if (colIdx == 0)
+			field = "issue_status";
+		else if(colIdx == 1)
+			field="team_number";
+		else if (colIdx == 2)
+			field="creation_date";
+		else if (colIdx == 3)
+			field="due_date";
+		else if (colIdx == 4)
+			field="closed_date";
+		else if (colIdx == 5)
+			field="description";
+		else{
+		}
+		PreparedStatement preparedStatement = null;
+		String updateStatement = "update checkpoints set "+field+" = ? where check_pointID = "+id;
+		
+		preparedStatement = connection
+			      .prepareStatement(updateStatement);
+		preparedStatement.setString(1,updatedValue);
+		preparedStatement.executeUpdate();
+		System.out.println(updateStatement);
+		
+	}
+	
+	
 	public static void deleteRecord(int id, Connection connection)
 	{
 		PreparedStatement preparedStatement = null;
@@ -148,7 +180,6 @@ public class DBConnectionUtil {
 			preparedStatement.executeUpdate();
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -1,6 +1,7 @@
 package sfsu.edu.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -168,6 +169,9 @@ public class BaseController {
 	@RequestMapping(value = "/updateRecord", method = RequestMethod.POST)
 	public void UpdateData(HttpServletRequest request,
 			HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("create_update_checkpoint");
+		
+		
 		int id = Integer.parseInt(request.getParameter("id"));
 		System.out.println("id is: " + id);
 		System.out.println("yup, I came inside update record!");
@@ -176,6 +180,24 @@ public class BaseController {
 		System.out.println("column-position is: " + request.getParameter("columnPosition"));
 		System.out.println("rowId is: " + request.getParameter("rowId"));
 		System.out.println("value is: " + request.getParameter("value"));
+	
+		
+		try {
+			DBConnectionUtil.updateCheckpointRecord(id, DBConnectionUtil.getConnection(),request.getParameter("value"),
+					Integer.parseInt(request.getParameter("columnId")));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//return model;
+	
 	}
 	
 	
