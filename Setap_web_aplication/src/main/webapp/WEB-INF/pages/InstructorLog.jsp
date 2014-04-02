@@ -20,9 +20,9 @@
 		<form id="instructer_logs" action="addInstruction"  method="post">
 			<div id="column_inner_" style="background-color:#FFFFFF;float:left;">
 				<label>Instructor : <select name="select_instructor" title="Instructor">
-				<option value="1">Sonal</option>
-				<option value="2">Mayank</option>
-				<option value="3">Rupal</option>
+				<option value="Marc">Marc</option>
+				<option value="John">John</option>
+				<option value="Maria">Maria</option>
 				<option value="4" selected="selected">Select Instructor</option>
 			</select></label>
 			<label> Team # : <select name="select_team" title="Instructor">

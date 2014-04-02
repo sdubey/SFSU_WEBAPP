@@ -1,20 +1,104 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>ContactUS</title>
-<link href="resources/css/demo_page.css" rel="stylesheet"
-	type="text/css" />
-<link href="resources/css/demo_table.css" rel="stylesheet"
-	type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery More/Less Text</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+// The height of the content block when it's not expanded
+var adjustheight = 80;
+// The "more" link text
+var moreText = "+  More";
+// The "less" link text
+var lessText = "- Less";
+
+// Sets the .more-block div to the specified height and hides any content that overflows
+$(".more-less .more-block").css('height', adjustheight).css('overflow', 'hidden');
+
+// The section added to the bottom of the "more-less" div
+$(".more-less").append('<p class="continued">[&hellip;]</p><a href="#" class="adjust"></a>');
+
+$("a.adjust").text(moreText);
+
+$(".adjust").toggle(function() {
+		$(this).parents("div:first").find(".more-block").css('height', 'auto').css('overflow', 'visible');
+		// Hide the [...] when expanded
+		$(this).parents("div:first").find("p.continued").css('display', 'none');
+		$(this).text(lessText);
+	}, function() {
+		$(this).parents("div:first").find(".more-block").css('height', adjustheight).css('overflow', 'hidden');
+		$(this).parents("div:first").find("p.continued").css('display', 'block');
+		$(this).text(moreText);
+});
+});
+
+</script>
+
+<style>
+	body{
+		background:#fefefe;
+		font-family:Tahoma, Geneva, sans-serif; 
+	}
+	p{
+		font-family:Tahoma, Geneva, sans-serif; 
+		font-size:14px; 
+		line-height:22px;
+		margin-bottom:20px;
+	}
+	#container{
+		width:700px;
+		margin:auto;
+	}
+	a.adjust{
+		padding:10px;
+		display:block;
+		font-weight:bold;
+		background:#eee;
+		color:#333;
+		border-radius:12px;
+		-webkit-border-radius:12px;
+		-moz-border-radius:12px;
+		width:80px;
+		text-align:center;
+		text-decoration:none;
+	}
+		a.adjust:hover{
+			background:#333;
+			color:#FFF;
+			-webkit-transition: all 400ms; /*safari and chrome */
+			-moz-transition: all 400ms ease; /* firefox */
+			-o-transition: all 400ms ease; /* opera */
+			transition: all 400ms ease;
+		}
+	p.continued{
+		margin-top:0;
+	}
+	img{
+		padding:10px;
+		background:#FFF;
+		border-radius: 12px;
+		-webkit-box-shadow: 0 1px 13px rgba(0,0,0,.25);
+		-moz-box-shadow: 0 1px 13px rgba(0,0,0,.25);
+		box-shadow: 0 1px 13px rgba(0,0,0,.25);
+		width:400px;
+		margin-left:20px;
+	}
+</style>
+
 </head>
-<body id=dt_example>
-	<div id="container">
-	<a href="login">Back to Login page</a>
-		<h2>SETAP</h2>
-		<p>Modern software development today involves intensive software
+
+<body>
+
+<div id="container">
+	<h1>About SETAP</h1>
+    <div class="more-less">
+    <a href="login">Home page</a>
+    	<div class="more-block">
+          <p>Modern software development today involves intensive software
 			engineering (SE) teamwork (where teams are often globally
 			distributed) with the goals of developing easy to use and
 			maintainable software (SW), on schedule and budget, and satisfying
@@ -25,7 +109,9 @@
 			half experience cost and schedule overruns [1-5]. The research also
 			indicates that these failures stem primarily from failures in
 			teamwork aspects of SE such as communication, organization and
-			teamwork [1,4-8]. Therefore, there is a critical need in developing
+			teamwork [1,4-8].
+			</p><p>
+			 Therefore, there is a critical need in developing
 			methods to effectively teach (and with it to assess) teamwork skills
 			in SE including for globally distributed teams. Effective methods for
 			assessment and early prediction of learning effectiveness in SE
@@ -46,7 +132,10 @@
 			(ML) [9] used nowadays in many applications from medicine, marketing,
 			analysis of customer and user behavior (e.g. on-line shopping [10] to
 			SE problems such as in managing SW reuse and evolution [11, 28, 29])
-			are rarely used; d) methods to predict early the possible team
+			are rarely used; d) 
+			</p><p>
+			
+			methods to predict early the possible team
 			failures to enable class intervention are rarely available (one
 			reason being that most class surveys are given at the end of the
 			class). In our research we define the learning of SE teamwork as the
@@ -59,6 +148,8 @@
 			in that it: a) develops and uses only objective and quantitative
 			measures from multiple courses like statistics of their time usage
 			and usage of SE tools; and b) applies powerful machine learning (ML)
+			</p><p>
+			
 			techniques to identify quantitative and objective factors which can
 			assess and predict students’ learning of SE teamwork skills. We chose
 			Random Forest (RF) ML approach [17, 20] due to its accuracy, ease of
@@ -77,6 +168,7 @@
 			Germany Step 2: Creation of ML training database with team activity
 			measures and instructor observations of learning outcomes Step 3:
 			Applying Random Forest ML to discover models and factors that
+			</p><p>
 			determine and predict student SE teamwork achievement. Our joint and
 			synchronously taught SE class now involves about 140 students each
 			year, working in about 20-30 teams of 5-6 students each. All student
@@ -94,6 +186,7 @@
 			Student team project brings 50/100 class points, with SE Process and
 			SE Product component contributing with 25 each. It is critical to
 			form student teams with approximately the same overall distribution
+			</p><p>
 			of skills and experiences, in order to focus our analysis only on
 			factors influencing team success exhibited during the class and
 			minimize influence of overall team experience and skills prior to the
@@ -114,6 +207,7 @@
 			such that team skills score obtained by averaging participating
 			student skills score is approximately equal. Genders are mixed as
 			much as possible Global teams are formed mainly of volunteers keeping
+			</p><p>
 			the team score of global teams approximately equal to teams scores of
 			local teams Each team is asked to recommend a team lead who is then
 			evaluated and approved by instructors. Global teams have team leads
@@ -129,6 +223,7 @@
 			several teamwork activity measures (TAM) from a few student teams)
 			with very preliminary RF analysis [22]. In this paper we provide
 			significant new contributions as follows: a) we for the first time
+			</p><p>
 			present in detail a full TAM data set (over 40 measures) with
 			detailed definitions and methods of collection including some
 			recently developed new measures; b) we present a ML framework by
@@ -152,10 +247,13 @@
 			collection instruments and tools by students and faculty, as well as
 			integration of data collection and isntrutorss’ observations with the
 			teaching.</p>
-	<div id="footer">
-		<%@ include file="footer.jsp"%>
-	</div>
+          
+         </div>
+ 	</div>
+    
+    <hr />
+</div>
 
-	</div>
 </body>
 </html>
+
