@@ -53,20 +53,28 @@ public class BaseController {
 		ModelAndView model = new ModelAndView();
 		String user = request.getParameter("username");
 		String password = request.getParameter("password");
-		
-		System.out.println("user is "+ user);
-		System.out.println("password is "+ password);
 
-		if (user.equals("sfsu@mail.sfsu.edu") && password.equals("sfsu")) {
-			model.setViewName("home");
-		} else {
-			try {
+		System.out.println("user is " + user);
+		System.out.println("password is " + password);
+
+		try {
+			System.out.println("DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection() --->"+ DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection(),
+					user, password));
+
+			if (DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection(),
+					user, password)) {
+				model.setViewName("home");
+			} else 
+			{
 				response.getWriter().print("Plaese try again");
 				model.setViewName("login");
-
-			} catch (IOException e) {
-				e.printStackTrace();
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 		return model;

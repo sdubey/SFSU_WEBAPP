@@ -17,6 +17,35 @@ public class DBConnectionUtil {
 	 * @throws SQLException 
 	 * @throws ClassNotFoundException 
 	 */
+	public static boolean isValidUser(Connection connection,String user_id, String password)
+	{
+		  PreparedStatement preparedStatement = null;
+		  ResultSet resultSet = null;
+		  int rsCount = 0;			
+		  try
+		  {
+			    String selectStatement = "select * from setap_users where user_email_id=? and password=?";
+			    
+			    preparedStatement = connection.prepareStatement(selectStatement);
+			    preparedStatement.setString(1, user_id);
+			    preparedStatement.setString(2, password);    
+				resultSet = preparedStatement.executeQuery();
+			    while(resultSet.next())
+			    {
+			    	rsCount++;
+			    }
+			    
+			    if (rsCount>0)
+			    {
+			    	return true;
+			    }
+			    
+		  } catch(SQLException e)
+		  {
+			System.out.println("Exception occured ");  
+		  }		     
+		return false;
+	}
 	
 	
 	public static int addRecordInstruction(Connection connection, InstructionLogBean instructor_log)
