@@ -21,6 +21,12 @@
 				    <input type="email" name="username" class="form-control" placeholder="Email address" required autofocus><br> 
 					<input type="password" name="password" class="form-control" placeholder="Password" required> 
 				<button class="btn-primary btn-center-login" type="submit">Sign in</button>
+		   
+		    <%
+		    if(request.getAttribute("message")!=null)
+            out.println(request.getAttribute("message"));
+            else
+            out.println("");%>
 			</form>
 			
 		</div>

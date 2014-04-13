@@ -58,22 +58,19 @@ public class BaseController {
 		System.out.println("password is " + password);
 
 		try {
-			System.out.println("DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection() --->"+ DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection(),
-					user, password));
-
+			
 			if (DBConnectionUtil.isValidUser(DBConnectionUtil.getConnection(),
 					user, password)) {
 				model.setViewName("home");
 			} else 
 			{
-				response.getWriter().print("Plaese try again");
-				model.setViewName("login");
+				 String message = "OOps!!! Invalid Username/Password";
+		            request.setAttribute("message", message);
+		       	model.setViewName("login");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 

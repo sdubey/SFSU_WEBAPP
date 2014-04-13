@@ -54,7 +54,7 @@
         <version>3.0.1</version>
         <scope>provided</scope>
 		</dependency>
-
+	
 		<!-- MySQL database driver -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -62,13 +62,6 @@
 			<version>5.1.9</version>
 		</dependency>
 				
-		<!--  Gson: Java to Json conversion -->
-	    <dependency>
-	      <groupId>com.google.code.gson</groupId>
-	      <artifactId>gson</artifactId>
-	      <version>2.2.2</version>
-	      <scope>compile</scope>
-	    </dependency>
 </dependencies>
 	
   <build>
