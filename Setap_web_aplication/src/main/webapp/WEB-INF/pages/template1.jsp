@@ -16,7 +16,6 @@
 		</div>
 	<form id="instructer_logs" action="addInstruction"  method="post">
 		<div class="page_content">
-			<h5>General Information</h5>
 			<div class="row-fluid">
 				<div class="span6">
 					<select name="select_instructor" title="Instructor">
@@ -24,7 +23,7 @@
 						<option value="John">John</option>
 						<option value="Maria">Maria</option>
 						<option value="4" selected="selected">Select Instructor</option>				
-					</select><br> 
+					</select> 
 					<select class="form-control" name="select_team">
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -45,7 +44,6 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Attendance</h5>
 			<div class="row-fluid">
 				<div class="span6">
 					<select name="Choose_absent_member" title="Choose Number" name="Choose_absent_member" >
@@ -61,7 +59,6 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Effectiveness</h5>
 			<div class="row-fluid">
 				<div class="span6 radio-inline">
 					<p>Team's effectiveness : (1 poor, 5 excellent)</p>
@@ -96,10 +93,9 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Checkpoints</h5>
 			<div class="row-fluid">
 				<div class="span12">
-					<a href="checkpoints">Create/ Update / View existing
+					<a href="checkpoints"> Create/ Update / View existing
 						checkpoint</a>
 					<div class="icon-question-sign" title="help"></div>
 				</div>
@@ -107,11 +103,12 @@
 
 			<div class="row-fluid">
 				<div class="span12">
-					<button class="btn-primary btn-right-submit" type="submit">Insert
+					<button class="btn-primary btn-center-login" type="submit">Insert
 						Log</button>
-						<br>
+
 				</div>
 			</div>
+
 		</div>
 		<hr>
 		<div class="page_content"></div>

@@ -5,10 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ContactUS</title>
-<link href="resources/css/demo_page.css" rel="stylesheet"
-	type="text/css" />
-<link href="resources/css/demo_table.css" rel="stylesheet"
-	type="text/css" />
+<link href="resources/css/demo_page.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/demo_table.css" rel="stylesheet" type="text/css" />
 </head>
 <body id=dt_example>
 	<div id="container">

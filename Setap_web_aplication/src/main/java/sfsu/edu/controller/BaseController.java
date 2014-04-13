@@ -28,7 +28,24 @@ public class BaseController {
 		return "index";
 
 	}
+	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public ModelAndView test() {
 
+		ModelAndView model = new ModelAndView("template");
+		return model;
+
+	}
+
+	
+	@RequestMapping(value = "/test1", method = RequestMethod.GET)
+	public ModelAndView test1() {
+
+		ModelAndView model = new ModelAndView("template1");
+		return model;
+
+	}
+	
 	@RequestMapping(value = "/validate", method = RequestMethod.POST)
 	public ModelAndView validateData(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -40,7 +57,7 @@ public class BaseController {
 		System.out.println("user is "+ user);
 		System.out.println("password is "+ password);
 
-		if (user.equals("sfsu") && password.equals("sfsu")) {
+		if (user.equals("sfsu@mail.sfsu.edu") && password.equals("sfsu")) {
 			model.setViewName("home");
 		} else {
 			try {
@@ -168,7 +185,7 @@ public class BaseController {
 	@RequestMapping(value = "/updateRecord", method = RequestMethod.POST)
 	public void UpdateData(HttpServletRequest request,
 			HttpServletResponse response) {
-		ModelAndView model = new ModelAndView("create_update_checkpoint");
+		//ModelAndView model = new ModelAndView("create_update_checkpoint");
 		
 		
 		int id = Integer.parseInt(request.getParameter("id"));
@@ -336,11 +353,13 @@ public class BaseController {
 	}
 
 	@RequestMapping(value = "/sendemail", method = RequestMethod.POST)
-	public void sendEmail(HttpServletRequest request,
+	public ModelAndView sendEmail(HttpServletRequest request,
 			HttpServletResponse response) {
 		int checkPointId = Integer.parseInt(request.getParameter("checkPointId"));
+		ModelAndView model = new ModelAndView("email");
 		System.out.println("yup, I came inside send email function!");
 		System.out.println("id is: " + checkPointId);
+		return model;
 	}
 	
 }
