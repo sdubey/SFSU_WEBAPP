@@ -37,6 +37,13 @@ public class BaseController {
 
 	}
 
+	@RequestMapping(value = "/signout", method = RequestMethod.GET)
+	public ModelAndView signout() {
+
+		ModelAndView model = new ModelAndView("login");
+		return model;
+
+	}
 	
 	@RequestMapping(value = "/test1", method = RequestMethod.GET)
 	public ModelAndView test1() {

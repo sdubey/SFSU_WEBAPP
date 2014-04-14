@@ -20,6 +20,7 @@
 					<li><a href="ContactUs"> Contact </a></li>
 					<li><a href="about"> About </a></li>
 				</ul>
+					<a href="signout"> Sign Out! </a>
 			</div>
 		</div>
 	</div>
