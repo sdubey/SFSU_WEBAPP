@@ -54,10 +54,6 @@ $(".adjust").toggle(function() {
 		line-height:22px;
 		margin-bottom:20px;
 	}
-	#container{
-		width:700px;
-		margin:auto;
-	}
 	a.adjust{
 		padding:10px;
 		display:block;
