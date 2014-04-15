@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="com.stringpool.bean.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Checkpoints</title>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>template</title>
+<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/setap.css" rel="stylesheet">
 <link href="resources/css/demo_page.css" rel="stylesheet"
 	type="text/css" />
 <link href="resources/css/demo_table.css" rel="stylesheet"
@@ -54,14 +56,19 @@
                               			null]});
              });
         </script>
-
-
 </head>
-
-<body id="dt_example">
+<body>
 	<div id="container">
-		<div id="demo_jui">
+		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
+			<h4>Create/Update Checkpoints</h4>
+		</div>
+		<div class="page_content">
+		<div id="demo_jui">
+		<div class="pagination-right">
+			<button id="btnDeleteRow">Delete Checkpoint</button>
+			<button id="btnAddNewRow">Add Checkpoint</button>
+		</div>
 			<table id="companies" class="display">
 				<thead>
 					<tr>
@@ -95,10 +102,6 @@
 					<% } %>
 				</tbody>
 			</table>
-
-			<button id="btnDeleteRow">Delete an entry</button>
-			<button id="btnAddNewRow">Add an entry</button>
-
 			<form id="formAddNewRow" action="#" title="Add new row">
 				<label for="issue_status">Status:</label> <select
 					name="issue_status" id="issue_status" rel="0">
@@ -124,7 +127,11 @@
 				<button id="btnAddNewRowCancel">Cancel</button>
 			</form>
 		</div>
-		<%@ include file="footer.jsp"%>
+	    </div>
+		<div class="page_content"></div>
+		<div id="modal-footer" class="modal-footer">
+			<%@ include file="footer.jsp"%>
+		</div>
 	</div>
 </body>
 </html>
