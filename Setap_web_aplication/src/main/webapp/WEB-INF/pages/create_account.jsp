@@ -12,20 +12,12 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h3>SEATP : Software Engineering Teamwork Assessment and Prediction Home</h3>		
+			<h3>Create Account</h3>		
 		</div>
 		<div class="page_content">
-			<h4>How to use this application :</h4>
-			<p>	
-			This application provides the features to export/print/view the logs. <br><br>
-			
-			The project mainly provides two functionalities :<br><br>
-			
-			a)	<a href="InstructorLog">Enter Class logs</a> This feature allows to enter the 
-			class logs through electronic form based entries. <br><br>
-			b)  <a href="export_logs"> View/Export Class logs</a> This feature allows to do the export/print
-			the data of all the logs entered by the instructer. <br><br>
-			</p>		
+		<h3>To create an account, please send an email to Mark Sosnick at: <em>msosnick@mail.sfsu.edu</em></h3>
+		<hr>
+		
 		</div>
 		
 		<div id="modal-footer" class="modal-footer">

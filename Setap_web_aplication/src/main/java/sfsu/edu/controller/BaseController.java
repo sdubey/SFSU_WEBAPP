@@ -247,6 +247,13 @@ public class BaseController {
 
 	}
 	
+	@RequestMapping(value = "/create_account", method = RequestMethod.GET)
+	public ModelAndView getCreateAccount() {
+
+		ModelAndView model = new ModelAndView("create_account");
+		return model;
+
+	}
 	
 	
 

@@ -66,19 +66,21 @@
 		<div class="page_content">
 		<div id="demo_jui">
 		<div class="pagination-right">
-			<button id="btnDeleteRow">Delete Checkpoint</button>
-			<button id="btnAddNewRow">Add Checkpoint</button>
+			<button class="btn-primary" id="btnDeleteRow">Delete Checkpoint</button>
+			<button class="btn-primary" id="btnAddNewRow">Add Checkpoint</button>
+			<!--  class="btn-primary btn-right-submit" -->
+			
 		</div>
 			<table id="companies" class="display">
 				<thead>
 					<tr>
-						<th>issue_status</th>
-						<th>team</th>
-						<th>creation_date</th>
-						<th>due_date__</th>
-						<th>closed_date</th>
-						<th>description</th>
-						<th>email</th>
+						<th>Issue Status </th>
+						<th>Team # </th>
+						<th>Creation Date</th>
+						<th>Due Date </th>
+						<th>Closed Date</th>
+						<th>Description</th>
+						<th>Email Sent </th>
 						<th>Send Email</th>
 					</tr>
 				</thead>
@@ -128,7 +130,6 @@
 			</form>
 		</div>
 	    </div>
-		<div class="page_content"></div>
 		<div id="modal-footer" class="modal-footer">
 			<%@ include file="footer.jsp"%>
 		</div>

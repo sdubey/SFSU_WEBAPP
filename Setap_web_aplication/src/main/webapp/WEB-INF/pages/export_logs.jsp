@@ -39,8 +39,6 @@ $(document).ready( function () {
     } );
 } );
 </script>
-
-
 </head>
 
 <body id="dt_example">

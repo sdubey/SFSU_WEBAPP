@@ -18,6 +18,8 @@
 	type="text/css" media="all" />
 <link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css"
 	rel="stylesheet" type="text/css" media="all" />
+<link href="resources/css/TableTools.css" rel="stylesheet"
+	type="text/css" />
 
 <script src="resources/js/jquery.min.js" type="text/javascript"></script>
 <script src="resources/js/jquery.dataTables.min.js"
@@ -25,37 +27,20 @@
 <script src="resources/js/jquery.jeditable.js" type="text/javascript"></script>
 <script src="resources/js/jquery-ui.js" type="text/javascript"></script>
 <script src="resources/js/jquery.validate.js" type="text/javascript"></script>
-<script src="resources/js/jquery.dataTables.editable.js"
-	type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="resources/js/ZeroClipboard.js"></script>
+<script type="text/javascript" charset="utf-8" src="resources/js/TableTools.js"></script>
+<script type="text/javascript" src="resources/js/jquery.dataTables.editable.js"></script>
 
 <script type="text/javascript">
-        $(document).ready(function () {
-            $("#companies").dataTable({"sPaginationType": "full_numbers",
- 			   						   "bJQueryUI": true})
-            .makeEditable({sDeleteHttpMethod: "GET",
-                		   sDeleteURL: "deleteRecord",
-                		   sDeleteRowButtonId: "btnDeleteRow",
-                		   sAddNewRowFormId: "formAddNewRow",
-                           sAddNewRowButtonId: "btnAddNewRow",
-                           sAddNewRowOkButtonId: "btnAddNewRowOk",
-                           sAddNewRowCancelButtonId: "btnAddNewRowCancel",
-                           sAddURL: "addRecord",
-                           sAddHttpMethod: "POST",
-                           sUpdateURL: "updateRecord",
-                           aoColumns: [{indicator: 'Saving...',
-                        	   			type: 'select',
-										onblur: 'submit',
-										data: "{'':'Please select', 'OPEN':'OPEN','CLOSED':'CLOSED', 'OVERDUE':'OVERDUE', 'REOPEN':'REOPEN'}"
-										},
-                              			null,
-                              			{},
-                              			{},
-                              			{},
-                              			{},
-                              			null,
-                              			null]});
-             });
-        </script>
+$(document).ready( function () {
+    $('#example').dataTable( {
+        "sDom": 'T<"clear">lfrtip',
+        "oTableTools": {
+            "sSwfPath": "resources/swf/copy_csv_xls_pdf.swf"
+        }
+    } );
+} );
+</script>
 </head>
 <body>
 	<div id="container">
@@ -64,74 +49,43 @@
 			<h4>Create/Update Checkpoints</h4>
 		</div>
 		<div class="page_content">
-		<div id="demo_jui">
-		<div class="pagination-right">
-			<button id="btnDeleteRow">Delete Checkpoint</button>
-			<button id="btnAddNewRow">Add Checkpoint</button>
-		</div>
-			<table id="companies" class="display">
+         		<div id="demo_jui">
+			<table id="example" class="display">
 				<thead>
 					<tr>
-						<th>issue_status</th>
-						<th>team</th>
-						<th>creation_date</th>
-						<th>due_date__</th>
-						<th>closed_date</th>
-						<th>description</th>
-						<th>email</th>
-						<th>Send Email</th>
+					
+					  <th>instructor</th>  
+  					  <th>team</th>  
+  					  <th>date</th> 
+  					  <th>Reason</th>  
+  					  <th>absence</th> 
+  					  <th>reason</th>  
+  					  <th>lead_effect</th>  
+  					  <th>team_effect</th>
 					</tr>
 				</thead>
 				<tbody>
-					<% for(CheckPointBean c: DBConnectionUtil.getDBData(DBConnectionUtil.getConnection())){ %>
-					<tr id="<%=c.getCheck_pointID()%>">
-						<td><%=c.getIssue_status()%></td>
-						<td><%=c.getTeam_number()%></td>
-						<td><%=c.getCreation_date()%></td>
-						<td><%=c.getDue_date()%></td>
-						<td><%=c.getClosed_date()%></td>
-						<td><%=c.getDescription()%></td>
-						<td><%=c.getEmail_notification()%></td>
-						<td>
-							<form method="POST" action="sendemail">
-								<input name="checkPointId" type="hidden" value="<%=c.getCheck_pointID()%>">
-								<input type="submit" value="Send Email">
-							</form>
-						</td>
+					<% for(InstructionLogBean c: DBConnectionUtil.getInstructionLogData(DBConnectionUtil.getConnection())){ %>
+					<tr id="<%=c.getLog_id()%>">
+						<td><%=c.getInstructor()%></td>
+						<td><%=c.getTeam()%></td>
+						<td><%=c.getMeeting_date()%></td>
+						<td><%=c.getTextarea_reason()%></td>
+						<td><%=c.getAbsent_member()%></td>
+						<td><%=c.getTextarea_reason()%></td>
+						<td><%=c.getTeam_lead_effectiveness()%></td>
+						<td><%=c.getTeam_effectiveness()%></td>
+						
 					</tr>
 					<% } %>
 				</tbody>
 			</table>
-			<form id="formAddNewRow" action="#" title="Add new row">
-				<label for="issue_status">Status:</label> <select
-					name="issue_status" id="issue_status" rel="0">
-					<option value="OPEN">OPEN</option>
-					<option value="CLOSED">CLOSED</option>
-					<option value="REOPEN">REOPEN</option>
-					<option value="OVERDUE">OVERDUE</option>
-				</select> <br /> <label for="team_number">team_number</label> <input
-					type="text" name="team_number" id="team_number" rel="1" /> <br />
-
-				<label for="creation_date">creation_date</label> <input type="text"
-					name="creation_date" id="creation_date" rel="2"> <br /> <label
-					for="due_date">due_date</label> <input type="text" name="due_date"
-					id="due_date" rel="3"> <br /> <label for="closed_date">closed_date</label>
-				<input type="text" name="closed_date" id="closed_date" rel="4">
-				<br /> <label for="description">Description</label> <input
-					type="text" name="description" id="description" rel="5" /> <br />
-
-				<input type="hidden" id="id" name="id" value="N" rel="6" /> 
-				<input type="hidden" id="id" name="id" value="<button id='btnmail'>Send Mail</button>" rel="7" />
-
-				<button id="btnAddNewRowOk">Add</button>
-				<button id="btnAddNewRowCancel">Cancel</button>
-			</form>
 		</div>
-	    </div>
-		<div class="page_content"></div>
-		<div id="modal-footer" class="modal-footer">
+		
+		</div>
+			<div id="modal-footer" class="modal-footer">
 			<%@ include file="footer.jsp"%>
 		</div>
-	</div>
+	    </div>
 </body>
 </html>
