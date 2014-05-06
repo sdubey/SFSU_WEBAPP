@@ -13,7 +13,7 @@
 		<div class="navbar">
 			<div class="navbar-inner">
 				<ul class="nav">
-				    <li><h3>SETAP</h3></li>
+				    <li><h4>SETAP Data Collection Tool</h4></li>
 					<li><a href="home">Home </a></li>
 					<li><a href="InstructorLog">Enter Class logs</a></li>
 					<li><a href="export_logs">View/Export Class logs</a></li>

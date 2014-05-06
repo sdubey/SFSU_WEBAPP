@@ -10,11 +10,9 @@
 </head>
 <body>
 	<div id="modal-header" class="modal-header">
-		<h3>SETAP Login</h3>
+		<h3>Login - SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h3>
 	</div>
 
-	<h3>SETAP: Software Engineering Teamwork Assessment and Prediction</h3>
-	<p></p>
 	<div class="container">
 	<div class="page_content">
 		<div class="row-fluid">
@@ -24,8 +22,8 @@
 				        <p>Some steps in the process of SETAP are currently performed
 						manually on paper. This SETAP project allows electronic-form-based
 						entry of instructer's logs after each class. Specifically, the
-						in-class observation data, so there is some manual repetitive
-						effort involved in the project.<a> Click here</a> for more details about SETAP.</p>
+						in-class observation data.<br><br>
+						<a> Click here</a> for more details about SETAP.</p>
 
 				</div>
 			</div>
@@ -41,7 +39,7 @@
 						<button class="btn-primary" type="reset">Cancel</button>
 						<button class="btn-primary" type="submit">Sign in</button><br>
 		
-						For account access or login issue please <a href="create_account" align="right">Click here</a>
+						<p>For account access or login issue please mail to admin@setap.com <p>
 					</form>
 				</div>
 			</div>

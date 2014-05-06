@@ -23,7 +23,7 @@
 		</div>
 	<form id="instructer_logs" action="addInstruction"  method="post">
 		<div class="page_content">
-			<h5>General Information</h5>
+			<h4>1 - General Information</h4>
 			<div class="row-fluid">
 				<div class="span6">
 					<div class="mycontent-left">
@@ -56,7 +56,7 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Attendance</h5>
+			<h4>2 - Attendance</h4>
 			<div class="row-fluid">
 				<div class="span6">
 					<div class="mycontent-left">
@@ -71,12 +71,12 @@
 				</div>
 				<div class="span6">
 					<div class="mycontent-right">
-						<textarea class="form-control" rows="2"  name="textarea_reason"></textarea>
+						<textarea class="form-control" rows="2"  name="textarea_reason" >Type Reason here</textarea>
 					</div>	
 				</div>
 			</div>
 			<hr>
-			<h5>Effectiveness</h5>
+			<h4>3 - Effectiveness</h4>
 			<div class="row-fluid">
 				<div class="span6 radio-inline">
 					<div class="mycontent-left">
@@ -115,7 +115,7 @@
 				</div>
 			</div>
 			<hr>
-			<h5>Checkpoints</h5>
+			<h4>4 - Checkpoints (Optional) </h4>
 			<div class="row-fluid">
 				<div class="span12">
 					<a href="checkpoints">Manage Checkpoints ( Create , Delete , Modify )</a>

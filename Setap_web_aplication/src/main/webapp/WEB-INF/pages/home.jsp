@@ -12,7 +12,7 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h3>SEATP : Software Engineering Teamwork Assessment and Prediction Home</h3>		
+			<h3>Home - SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h3>		
 		</div>
 		<div class="page_content">
 			<h4>How to use this application :</h4>
@@ -24,7 +24,7 @@
 			a)	<a href="InstructorLog">Enter Class logs</a> This feature allows to enter the 
 			class logs through electronic form based entries. <br><br>
 			b)  <a href="export_logs"> View/Export Class logs</a> This feature allows to do the export/print
-			the data of all the logs entered by the instructer. <br><br>
+			the data of all the logs entered by the instructor. <br><br>
 			</p>		
 		</div>
 		
