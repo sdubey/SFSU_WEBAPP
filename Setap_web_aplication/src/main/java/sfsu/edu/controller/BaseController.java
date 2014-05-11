@@ -2,8 +2,6 @@ package sfsu.edu.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,14 +11,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.stringpool.bean.CheckPointBean;
-import com.stringpool.bean.DBConnectionUtil;
-import com.stringpool.bean.InstructionLogBean;
+import com.setap.beans.CheckPointBean;
+import com.setap.beans.InstructionLogBean;
+import com.setap.persistence.DBConnectionUtil;
 
 @Controller
 @RequestMapping("/")
 public class BaseController {
 
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public ModelAndView test(HttpServletRequest request,
+			HttpServletResponse response) {
+
+		ModelAndView model = new ModelAndView("del_test");
+		
+		return model;
+
+	}
+
+	
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
 	public ModelAndView signout(HttpServletRequest request,
 			HttpServletResponse response) {

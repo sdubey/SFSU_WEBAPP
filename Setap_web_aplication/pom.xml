@@ -8,23 +8,23 @@
 	<name>Setap_web_aplication Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+
+	<repositories>
+		<repository>
+			<id>JBoss repository</id>
+			<url>http://repository.jboss.com/maven2/</url>
+		</repository>
+		
+	</repositories>
+
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.6</jdk.version>
 	</properties>
 
+
 	<dependencies>
-
-
-		<!-- Javaee API -->
-
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>6.0</version>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- Spring 3 dependencies -->
 		<dependency>
@@ -59,25 +59,11 @@
 			<version>5.1.9</version>
 		</dependency>
 
-		<!-- Hibernate framework -->
+		<!-- Hibernate core -->
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId>
-			<version>3.2.3.ga</version>
-		</dependency>
-
-		<!-- Hibernate -->
-
-		<dependency>
-			<groupId>hibernate-annotations</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.3.0.GA</version>
-		</dependency>
-
-		<dependency>
-			<groupId>hibernate-commons-annotations</groupId>
-			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>3.0.0.GA</version>
+			<groupId>hibernate</groupId>
+			<artifactId>hibernate3</artifactId>
+			<version>3.2.3.GA</version>
 		</dependency>
 
 
@@ -101,12 +87,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>antlr</groupId>
-			<artifactId>antlr</artifactId>
-			<version>2.7.7</version>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
 		</dependency>
 		<!-- Hibernate library dependecy end -->
 
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

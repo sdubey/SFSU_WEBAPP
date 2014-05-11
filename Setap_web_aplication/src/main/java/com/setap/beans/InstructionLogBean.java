@@ -1,4 +1,4 @@
-package com.stringpool.bean;
+package com.setap.beans;
 
 public class InstructionLogBean {
 

@@ -4,15 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>template</title>
+<title>InstructorLogs</title>
 <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/setap.css" rel="stylesheet">
-
-<style>
-.mycontent-left {
-  border-right: 3px solid #333;
-}
-</style>
 
 </head>
 <body>
@@ -20,6 +14,7 @@
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
 			<h4>Instructor Class Log : </h4>
+			 <p class="note">Fields with <span class="red">*</span> are required fields</p>
 		</div>
 	<form id="instructer_logs" action="addInstruction"  method="post">
 		<div class="page_content">

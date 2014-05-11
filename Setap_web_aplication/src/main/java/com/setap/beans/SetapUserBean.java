@@ -1,30 +1,25 @@
-package com.stringpool.bean;
+package com.setap.beans;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class SetapUserBean implements java.io.Serializable {
 
-@Entity
-@Table(name = "stock", catalog = "mkyong")
-public class SetapUser {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int userId;
 	String userEmailId ; 
 	String password ;
 	
-	public SetapUser() {
+	public SetapUserBean() {
 		super();
 	}
 	
-	public SetapUser(String userEmailId, String password) {
+	public SetapUserBean(String userEmailId, String password) {
 		super();
 		this.userEmailId = userEmailId;
 		this.password = password;
 	}
 	
-	@Id
-	@Column(name = "USER_ID", unique = true, nullable = false)
 	public int getUserId() {
 		return userId;
 	}
@@ -33,7 +28,6 @@ public class SetapUser {
 		this.userId = userId;
 	}
 	
-	@Column(name = "USER_NAME", unique = true, nullable = false, length = 200)
 	public String getUserEmailId() {
 		return userEmailId;
 	}
@@ -42,7 +36,6 @@ public class SetapUser {
 		this.userEmailId = userEmailId;
 	}
 	
-	@Column(name = "PASSWORD", nullable = false, length = 200)
 	public String getPassword() {
 		return password;
 	}
