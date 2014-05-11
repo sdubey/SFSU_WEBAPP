@@ -10,46 +10,54 @@
 </head>
 <body>
 	<div id="modal-header" class="modal-header">
-		<h3>Login - SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h3>
+		<h4>Login - SETAP(Software Engineering Team work Assessment and
+			Prediction) Data collection</h4>
 	</div>
 
 	<div class="container">
-	<div class="page_content">
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="mycontent-left">
-				<h3>About SETAP :</h3>
-				        <p>Some steps in the process of SETAP are currently performed
-						manually on paper. This SETAP project allows electronic-form-based
-						entry of instructer's logs after each class. Specifically, the
-						in-class observation data.<br><br>
-						<a> Click here</a> for more details about SETAP.</p>
+		<div class="page_content">
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="mycontent-left">
+						<h4>About SETAP :</h4>
+						<p>
+							Some steps in the process of SETAP are currently performed
+							manually on paper. This SETAP project allows
+							electronic-form-based entry of instructer's logs after each
+							class. Specifically, the in-class observation data.<br>
+							<br> <a> Click here</a> for more details about SETAP.
+						</p>
 
+					</div>
 				</div>
-			</div>
-			<div class="span6">
-				<div class="mycontent-right">
-					<form class="form-signin" role="form" action="validate"
-						action="validate" method="post">
-						<h2 class="form-signin-heading">Please sign in</h2>
-						<input type="email" name="username" class="form-control"
-							placeholder="Email address" required autofocus><br>
-						<input type="password" name="password" class="form-control"
-							placeholder="Password" required> <br>
-						<button class="btn-primary" type="reset">Cancel</button>
-						<button class="btn-primary" type="submit">Sign in</button><br>
-		
-						<p>For account access or login issue please mail to admin@setap.com <p>
-					</form>
-				</div>
-			</div>
-			<hr>
-		</div>
+				<div class="span6">
+					<div class="mycontent-right">
+						<form class="form-signin" role="form" action="validate"
+							action="validate" method="post">
+							<h2 class="form-signin-heading">Please sign in</h2>
+							<div class="pagination-centered">
+							<input type="email" name="username" class="form-control"
+								placeholder="Email address" required autofocus><br>
+							<input type="password" name="password" class="form-control"
+								placeholder="Password" required> <br>
+								<button class="btn-primary" type="reset">Cancel</button>
+								<button class="btn-primary" type="submit">Sign in</button><br>
+								<br>
+							</div>
 
-		<div id="modal-footer" class="modal-footer">
-			<%@ include file="footer.jsp"%>
+							<p>For account access or login issue please mail to
+								admin@setap.com
+							<p>
+						</form>
+					</div>
+				</div>
+				<hr>
+			</div>
+
+			<div id="modal-footer" class="modal-footer">
+				<%@ include file="footer.jsp"%>
+			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

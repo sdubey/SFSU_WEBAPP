@@ -15,10 +15,10 @@
 			<h3>Contact US</h3>		
 		</div>
 		<div class="page_content">
-		<h4>Contact US : setap@mail.sfsu.edu</h4>
-		<h4>Contact US : setap@mail.sfsu.edu</h4>
-		<h4>Contact US : setap@mail.sfsu.edu</h4>
-		<h4>Contact US : setap@mail.sfsu.edu</h4>		
+		<p>SFSU Computer Science Department <br><br>
+		Contact US : setap@mail.sfsu.edu
+		</p>
+		               		
 		</div>
 		
 		<div id="modal-footer" class="modal-footer">

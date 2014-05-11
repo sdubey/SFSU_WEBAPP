@@ -24,7 +24,7 @@ public class DBConnectionUtil {
 		  int rsCount = 0;			
 		  try
 		  {
-			    String selectStatement = "select * from setap_users where user_email_id=? and password=?";
+			    String selectStatement = "select * from setap_users where user_name=? and password=?";
 			    
 			    preparedStatement = connection.prepareStatement(selectStatement);
 			    preparedStatement.setString(1, user_id);
@@ -168,7 +168,6 @@ public class DBConnectionUtil {
 	
 	public static void updateCheckpointRecord(int id, Connection connection, String updatedValue, int colIdx) throws SQLException
 	{
-	
 		String field = null;
 		
 		if (colIdx == 0)

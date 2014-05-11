@@ -63,14 +63,17 @@
 			<%@ include file="header.jsp"%>
 			<h4>Create/Update Checkpoints</h4>
 		</div>
-		<div class="page_content">
-		<div id="demo_jui">
-		<div class="pagination-right">
+		
+		<div class="pagination-centered">
 			<button class="btn-primary" id="btnDeleteRow">Delete Checkpoint</button>
-			<button class="btn-primary" id="btnAddNewRow">Add Checkpoint</button>
+			<button class="btn-primary" id="btnAddNewRow">Add Checkpoint</button><br><br>
 			<!--  class="btn-primary btn-right-submit" -->
-			
 		</div>
+		
+		<div class="page_content">
+		
+		<div id="demo_jui">
+		
 			<table id="companies" class="display">
 				<thead>
 					<tr>

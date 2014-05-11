@@ -12,9 +12,10 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h3>Home - SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h3>		
+			<h3>Home</h3>		
 		</div>
 		<div class="page_content">
+		    <h4> SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h4>
 			<h4>How to use this application :</h4>
 			<p>	
 			This application provides the features to export/print/view the logs. <br><br>

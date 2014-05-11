@@ -44,19 +44,23 @@ $(document).ready( function () {
 <body id="dt_example">
 	<div id="container">
 		<div id="demo_jui">
+		<div class="page_content">
 			<%@ include file="header.jsp"%>
+			<div class="pagination-right">
+			<h2>Copy to clip board,Export as CSV/Excel/PDF or Print</h2>
+			</div>
 			<table id="example" class="display">
 				<thead>
 					<tr>
 					
-					  <th>instructor</th>  
-  					  <th>team</th>  
-  					  <th>date</th> 
+					  <th>Instructor</th>  
+  					  <th>Team</th>  
+  					  <th>Date</th> 
   					  <th>Reason</th>  
-  					  <th>absence</th> 
-  					  <th>reason</th>  
-  					  <th>lead_effect</th>  
-  					  <th>team_effect</th>
+  					  <th>Absence</th> 
+  					  <th>Reason</th>  
+  					  <th>Lead_effect</th>  
+  					  <th>Team_effect</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -75,6 +79,7 @@ $(document).ready( function () {
 					<% } %>
 				</tbody>
 			</table>
+			</div>
 		</div>
 		<%@ include file="footer.jsp"%>
 	</div>

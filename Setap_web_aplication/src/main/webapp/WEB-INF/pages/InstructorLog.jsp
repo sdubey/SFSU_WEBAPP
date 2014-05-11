@@ -71,7 +71,7 @@
 				</div>
 				<div class="span6">
 					<div class="mycontent-right">
-						<textarea class="form-control" rows="2"  name="textarea_reason" >Type Reason here</textarea>
+						<textarea class="form-control" rows="2"  name="textarea_reason" >Type Reason for absence here</textarea>
 					</div>	
 				</div>
 			</div>
