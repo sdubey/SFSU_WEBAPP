@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="com.stringpool.bean.*"%>
+	pageEncoding="ISO-8859-1" import="com.setap.persistence.*,com.setap.beans.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,27 +7,23 @@
 <title>template</title>
 <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/setap.css" rel="stylesheet">
-<link href="resources/css/demo_page.css" rel="stylesheet"
-	type="text/css" />
-<link href="resources/css/demo_table.css" rel="stylesheet"
-	type="text/css" />
-
-<link href="resources/css/demo_table_jui.css" rel="stylesheet"
-	type="text/css" />
-<link href="resources/css/themes/base/jquery-ui.css" rel="stylesheet"
-	type="text/css" media="all" />
-<link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css"
-	rel="stylesheet" type="text/css" media="all" />
+<link href="resources/css/demo_page.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/demo_table.css" rel="stylesheet"	type="text/css" />
+<link href="resources/css/demo_table_jui.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+<link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all" />
 
 <script src="resources/js/jquery.min.js" type="text/javascript"></script>
-<script src="resources/js/jquery.dataTables.min.js"
-	type="text/javascript"></script>
+<script src="resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="resources/js/jquery.jeditable.js" type="text/javascript"></script>
 <script src="resources/js/jquery-ui.js" type="text/javascript"></script>
 <script src="resources/js/jquery.validate.js" type="text/javascript"></script>
-<script src="resources/js/jquery.dataTables.editable.js"
-	type="text/javascript"></script>
-
+<script src="resources/js/jquery.dataTables.editable.js" type="text/javascript"></script>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
 <script type="text/javascript">
         $(document).ready(function () {
             $("#companies").dataTable({"sPaginationType": "full_numbers",
@@ -108,23 +104,33 @@
 				</tbody>
 			</table>
 			<form id="formAddNewRow" action="#" title="Add new row">
+				
 				<label for="issue_status">Status:</label> <select
 					name="issue_status" id="issue_status" rel="0">
 					<option value="OPEN">OPEN</option>
 					<option value="CLOSED">CLOSED</option>
 					<option value="REOPEN">REOPEN</option>
 					<option value="OVERDUE">OVERDUE</option>
-				</select> <br /> <label for="team_number">team_number</label> <input
-					type="text" name="team_number" id="team_number" rel="1" /> <br />
+				</select> <br />
+				<label for="team_number">team_number:</label> <select
+					name="team_number" id="team_number" rel="1">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="4">5</option>
+					<option value="4">6</option>
+					<option value="4">7</option>
+				</select> <br />
 
-				<label for="creation_date">creation_date</label> <input type="text"
-					name="creation_date" id="creation_date" rel="2"> <br /> <label
-					for="due_date">due_date</label> <input type="text" name="due_date"
-					id="due_date" rel="3"> <br /> <label for="closed_date">closed_date</label>
-				<input type="text" name="closed_date" id="closed_date" rel="4">
-				<br /> <label for="description">Description</label> <input
-					type="text" name="description" id="description" rel="5" /> <br />
-
+				<label for="creation_date">creation_date</label>
+				<input type="text"	name="creation_date" id="datepicker" rel="2"> <br /> 
+				<label for="due_date">due_date</label>
+				<input type="text" name="due_date" id="due_date" rel="3"> <br />
+				<label for="closed_date">closed_date</label>
+			    <input type="text" name="closed_date" id="closed_date" rel="4"><br /> 
+				<label for="description">Description</label> 
+				<input type="text" name="description" id="description" rel="5" /> <br />
 				<input type="hidden" id="id" name="id" value="N" rel="6" /> 
 				<input type="hidden" id="id" name="id" value="<button id='btnmail'>Send Mail</button>" rel="7" />
 

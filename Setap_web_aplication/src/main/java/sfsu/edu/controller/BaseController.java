@@ -2,6 +2,10 @@ package sfsu.edu.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -157,7 +161,7 @@ public class BaseController {
 		ModelAndView model = new ModelAndView("create_update_checkpoint");
 
 		HttpSession session = request.getSession(false);
-
+		String date="";
 		if (session.getAttribute("user") == null) {
 			model = new ModelAndView("login");
 		} else {
@@ -168,10 +172,29 @@ public class BaseController {
 			String issue_status = request.getParameter("issue_status");
 			String closed_date = request.getParameter("closed_date");
 			String description = request.getParameter("description");
+			
+			System.out.println("I am here" +team_number +"  "+  creation_date +"  "+due_date +"  "+issue_status +"  "
+					+closed_date +"  "+ description);
+			
+		
+			try {
+				    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+				    Date convertedCurrentDate = sdf.parse(creation_date);
+				    date=sdf.format(convertedCurrentDate );
+				    System.out.println(date);
+			   
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}
+			
+			//2012/02/02
+			//'05/21/2014'
+			
+			
 
 			CheckPointBean check_point = new CheckPointBean();
 			check_point.setTeam_number(team_number);
-			check_point.setCreation_date(creation_date);
+			check_point.setCreation_date(date);
 			check_point.setDue_date(due_date);
 			check_point.setIssue_status(issue_status);
 			check_point.setClosed_date(closed_date);
