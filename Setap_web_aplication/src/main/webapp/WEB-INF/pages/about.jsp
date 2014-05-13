@@ -94,7 +94,7 @@ $(".adjust").toggle(function() {
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h4>About SETAP</h4>
+			<h3><span class="tab">About SETAP</span></h3>
 		</div>
 		<div class="page_content">
 			<div class="more-less">

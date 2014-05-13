@@ -13,8 +13,7 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h4>Instructor Class Log : </h4>
-			 <p class="note">Fields with <span class="red">*</span> are required fields</p>
+			<h3><span class="tab">Instructor Class Log</span></h3>
 		</div>
 	<form id="instructer_logs" action="addInstruction"  method="post">
 		<div class="page_content">

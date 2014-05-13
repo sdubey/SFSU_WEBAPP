@@ -10,10 +10,11 @@
 </head>
 <body>
 	<div id="modal-header" class="modal-header">
-		<h4>Login - SETAP(Software Engineering Team work Assessment and
-			Prediction) Data collection</h4>
+		<h4>SETAP(Software Engineering Team work Assessment and
+			Prediction) Instructor Log Data collection</h4>
 	</div>
-
+	
+	
 	<div class="container">
 		<div class="page_content">
 			<div class="row-fluid">

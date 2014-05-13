@@ -17,8 +17,8 @@
 					<li><a href="home">Home </a></li>
 					<li><a href="InstructorLog">Enter Class logs</a></li>
 					<li><a href="export_logs">View/Export Class logs</a></li>
-					<li><a href="ContactUs"> Contact </a></li>
 					<li><a href="about"> About </a></li>
+					<li><a href="ContactUs"> Contact </a></li>
 				</ul>
 					<a href="signout"> Sign Out! </a>
 			</div>

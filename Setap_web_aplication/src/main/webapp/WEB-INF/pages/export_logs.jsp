@@ -42,10 +42,12 @@ $(document).ready( function () {
 </head>
 
 <body id="dt_example">
-	<div id="container">
+	<div id="container">		
+			<%@ include file="header.jsp"%>
+			<h3><span class="tab">View/Export Class Log</span></h3>
 		<div id="demo_jui">
 		<div class="page_content">
-			<%@ include file="header.jsp"%>
+			
 			<div class="pagination-right">
 			<h2>Copy to clip board,Export as CSV/Excel/PDF or Print</h2>
 			</div>

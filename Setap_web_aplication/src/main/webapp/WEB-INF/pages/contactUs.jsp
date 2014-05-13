@@ -12,7 +12,7 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h3>Contact US</h3>		
+				<h3><span class="tab">Contact US</span></h3>		
 		</div>
 		<div class="page_content">
 		<p>SFSU Computer Science Department <br><br>

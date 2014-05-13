@@ -12,7 +12,7 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h3>Home</h3>		
+			<h3><span class="tab">Home</span></h3>		
 		</div>
 		<div class="page_content">
 		    <h4> SETAP(Software Engineering Team work Assessment and Prediction) Data collection</h4>

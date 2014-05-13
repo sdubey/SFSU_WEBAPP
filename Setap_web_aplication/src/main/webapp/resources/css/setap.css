@@ -5,6 +5,10 @@ body, html {
     margin: 0;
 }
 
+span.tab{
+    padding: 0 80px; /* Or desired space*/
+}
+
 #mainDiv {
     height: 100%;
 }

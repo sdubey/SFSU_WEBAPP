@@ -4,17 +4,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.setap.beans.CheckPointBean;
 import com.setap.beans.InstructionLogBean;
 import com.setap.persistence.DBConnectionUtil;
@@ -28,12 +24,11 @@ public class BaseController {
 			HttpServletResponse response) {
 
 		ModelAndView model = new ModelAndView("del_test");
-		
+
 		return model;
 
 	}
 
-	
 	@RequestMapping(value = "/signout", method = RequestMethod.GET)
 	public ModelAndView signout(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -159,9 +154,10 @@ public class BaseController {
 			HttpServletResponse response) {
 
 		ModelAndView model = new ModelAndView("create_update_checkpoint");
-
 		HttpSession session = request.getSession(false);
-		String date="";
+		SimpleDateFormat fromUser = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 		if (session.getAttribute("user") == null) {
 			model = new ModelAndView("login");
 		} else {
@@ -172,35 +168,17 @@ public class BaseController {
 			String issue_status = request.getParameter("issue_status");
 			String closed_date = request.getParameter("closed_date");
 			String description = request.getParameter("description");
-			
-			System.out.println("I am here" +team_number +"  "+  creation_date +"  "+due_date +"  "+issue_status +"  "
-					+closed_date +"  "+ description);
-			
-		
-			try {
-				    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-				    Date convertedCurrentDate = sdf.parse(creation_date);
-				    date=sdf.format(convertedCurrentDate );
-				    System.out.println(date);
-			   
-			} catch (ParseException e1) {
-				e1.printStackTrace();
-			}
-			
-			//2012/02/02
-			//'05/21/2014'
-			
-			
-
-			CheckPointBean check_point = new CheckPointBean();
-			check_point.setTeam_number(team_number);
-			check_point.setCreation_date(date);
-			check_point.setDue_date(due_date);
-			check_point.setIssue_status(issue_status);
-			check_point.setClosed_date(closed_date);
-			check_point.setDescription(description);
 
 			try {
+
+				CheckPointBean check_point = new CheckPointBean();
+				check_point.setTeam_number(team_number);
+				check_point.setCreation_date(myFormat.format(fromUser.parse(creation_date)));
+				check_point.setDue_date(myFormat.format(fromUser.parse(due_date)));
+				check_point.setClosed_date(myFormat.format(fromUser.parse(closed_date)));
+				check_point.setDescription(description);
+				check_point.setIssue_status(issue_status);
+
 				int id = DBConnectionUtil.addRecord(
 						DBConnectionUtil.getConnection(), check_point);
 				response.getWriter().print(id);
@@ -209,6 +187,9 @@ public class BaseController {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

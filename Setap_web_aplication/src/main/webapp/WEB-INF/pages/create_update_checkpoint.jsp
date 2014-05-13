@@ -12,7 +12,6 @@
 <link href="resources/css/demo_table_jui.css" rel="stylesheet" type="text/css" />
 <link href="resources/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
 <link href="resources/css/themes/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all" />
-
 <script src="resources/js/jquery.min.js" type="text/javascript"></script>
 <script src="resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="resources/js/jquery.jeditable.js" type="text/javascript"></script>
@@ -24,6 +23,7 @@
     $( "#datepicker" ).datepicker();
   });
 </script>
+
 <script type="text/javascript">
         $(document).ready(function () {
             $("#companies").dataTable({"sPaginationType": "full_numbers",
@@ -57,7 +57,7 @@
 	<div id="container">
 		<div id="modal-header" class="modal-header">
 			<%@ include file="header.jsp"%>
-			<h4>Create/Update Checkpoints</h4>
+			<h3><span class="tab">Create/Update Checkpoints</span></h3>
 		</div>
 		
 		<div class="pagination-centered">
@@ -124,11 +124,11 @@
 				</select> <br />
 
 				<label for="creation_date">creation_date</label>
-				<input type="text"	name="creation_date" id="datepicker" rel="2"> <br /> 
+				<input type="text"	name="creation_date" id="creation_date" rel="2"> <br /> 
 				<label for="due_date">due_date</label>
 				<input type="text" name="due_date" id="due_date" rel="3"> <br />
 				<label for="closed_date">closed_date</label>
-			    <input type="text" name="closed_date" id="closed_date" rel="4"><br /> 
+			    <input type="text" name="closed_date" id="datepicker" rel="4"><br /> 
 				<label for="description">Description</label> 
 				<input type="text" name="description" id="description" rel="5" /> <br />
 				<input type="hidden" id="id" name="id" value="N" rel="6" /> 
